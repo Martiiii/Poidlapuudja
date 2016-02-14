@@ -63,6 +63,8 @@ html,
 body {
     height: 100%;
     background-color: #33332c;
+    background: url("http://files.vividscreen.info/soft/609cfdb872f32faa31e69a09f21e0731/Retro-Car-on-Highway-1920x1200.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 body {
     color: #fff;
@@ -78,7 +80,8 @@ body {
     min-height: 100%;
     -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
     box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-    background: url("http://files.vividscreen.info/soft/609cfdb872f32faa31e69a09f21e0731/Retro-Car-on-Highway-1920x1200.jpg") 0px -160px;
+
+
 }
 .site-wrapper-inner {
     display: table-cell;
@@ -102,6 +105,7 @@ body {
 .masthead-brand {
     margin-top: 5px;
     margin-bottom: 10px;
+
 
 
 
@@ -153,7 +157,7 @@ body {
         left:-450px;
         font-size: 30px;
         color: #d2c8cf;
-        font-family: Broadway;
+
     }
     .masthead-nav {
         float: left;
