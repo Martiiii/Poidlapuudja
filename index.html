@@ -37,41 +37,72 @@
 
 
 
-    <div class="container-fluid">
+<div class="container-fluid">
 
 
-        <div class="row">
+    <div class="row">
 
-            <div class="col-lg-8">
-                <div class="navbar navbar-default" role="navigation">
+        <div class="col-lg-8">
+            <div class="navbar navbar-default" role="navigation">
 
-                    <div class="navbar-header">
+                <div class="navbar-header">
 
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-                        <span class="navbar-brand">PÖIDLAPÜÜDJA</span>
-                    </div>
+                    <span class="navbar-brand">PÖIDLAPÜÜDJA</span>
+                </div>
 
-                    <div class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse">
 
-                        <ul class="nav navbar-nav">
-                            <li><a href="#">PEALEHT</a></li>
-                            <li><a href="#">SÕIDUD</a></li>
-                            <li><a href="#">KASUTAJAD</a></li>
-                            <li><a href="#">MINU SÕIDUD</a></li>
-                        </ul>
-                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">PEALEHT</a></li>
+                        <li><a href="#">SÕIDUD</a></li>
+                        <li><a href="#">KASUTAJAD</a></li>
+                        <li><a href="#" onClick="myFunction('Minu sõidud');" value="enter" >MINU SÕIDUD</a></li>
+
+                    </ul>
 
                 </div>
-            </div>
+                <div class="col-md-4 nopadding">
 
+                    <p>TERVITUSTEKST</p>
+
+                </div>
+
+                <p id="peep"></p>
+
+                <button onclick="myFunction('Harry Potter')">Click for Harry Potter</button>
+                <button onclick="myFunction('Bob')">Click for Bob</button>
+
+                <div>
+                <script> // nime muutus
+                    function myFunction(name)
+                    {
+                        document.getElementById("peep").innerHTML = name;
+                    }
+                </script>
+                </div>
+
+                <script>
+                    function Function(){ //minu sõidud vajutamisel
+
+                        alert("kuidas me selle siis lahendame?");
+
+                    };
+
+                </script>
+
+            </div>
         </div>
+
+
     </div>
+</div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
