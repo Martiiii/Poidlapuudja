@@ -1288,7 +1288,11 @@ h6,
   font-size: 12px;
 }
 p {
+
   margin: 0 0 10px;
+  font-family: Broadway;
+  color: #00ffe1;
+
 }
 .lead {
   margin-bottom: 20px;
