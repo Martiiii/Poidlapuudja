@@ -1292,6 +1292,9 @@ p {
   color: black;
   font-size: 18px;
   text-shadow: none;
+  font-family: Broadway;
+  color: #00ffe1;
+
 }
 .lead {
   margin-bottom: 20px;
