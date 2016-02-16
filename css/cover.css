@@ -19,40 +19,7 @@ a:hover {
     border: 1px solid #fff;
 }
 
-.nav {
-    height: 40px;
-    width: 900px;
 
-    position: relative;
-    left: -70px;
-}
-.nav ul {
-    margin: 0;
-    padding: 0;
-
-}
-
-.nav ul li {
-    list-style: none;
-    position: relative;
-
-}
-
-.nav ul li a {
-    text-decoration: none;
-    float: left;
-    display: block;
-    padding: 10px 20px;
-    position: relative;
-    left: -125px;
-    padding-left: 30px;
-    font-size: 20px;
-}
-
-.nav ul li a:hover {
-    color: #e4b9b9;
-
-}
 
 
 /*
@@ -105,6 +72,8 @@ body {
 .masthead-brand {
     margin-top: 5px;
     margin-bottom: 10px;
+    max-width: 100%;
+
 
 
 
