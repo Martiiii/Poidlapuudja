@@ -260,11 +260,6 @@ th {
     border: 1px solid #ddd !important;
   }
 }
-
-.lrbut {
-  color: #0d7875;
-}
-
 @font-face {
   font-family: 'Glyphicons Halflings';
 
@@ -1294,9 +1289,6 @@ h6,
 }
 p {
   margin: 0 0 10px;
-  color: black;
-  font-size: 18px;
-
 }
 .lead {
   margin-bottom: 20px;
@@ -6251,7 +6243,6 @@ button.close {
 }
 .carousel {
   position: relative;
-  margin: 0 auto;
 }
 .carousel-inner {
   position: relative;
@@ -6582,11 +6573,6 @@ button.close {
 .visible-lg-inline,
 .visible-lg-inline-block {
   display: none !important;
-}
-.nopadding {
-  padding: 0 !important;
-  margin: 0 !important;
-  background-color: ghostwhite;
 }
 @media (max-width: 767px) {
   .visible-xs {
