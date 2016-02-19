@@ -260,6 +260,11 @@ th {
     border: 1px solid #ddd !important;
   }
 }
+
+.lrbut {
+  color: #0d7875;
+}
+
 @font-face {
   font-family: 'Glyphicons Halflings';
 
