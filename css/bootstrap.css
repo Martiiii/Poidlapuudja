@@ -1292,9 +1292,6 @@ p {
   margin: 0 0 10px;
   color: black;
   font-size: 18px;
-  text-shadow: none;
-  font-family: Broadway;
-  color: #00ffe1;
 
 }
 .lead {
@@ -2128,7 +2125,6 @@ pre code {
   }
   .col-lg-4 {
     width: 33.33333333%;
-    background-color: grey;
   }
   .col-lg-3 {
     width: 25%;
@@ -6586,8 +6582,7 @@ button.close {
 .nopadding {
   padding: 0 !important;
   margin: 0 !important;
-  background-color: darkgrey;
-
+  background-color: ghostwhite;
 }
 @media (max-width: 767px) {
   .visible-xs {
