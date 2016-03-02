@@ -30,13 +30,17 @@ html,
 body {
     height: 100%;
     background-color: #33332c;
-    background: url("http://files.vividscreen.info/soft/609cfdb872f32faa31e69a09f21e0731/Retro-Car-on-Highway-1920x1200.jpg") no-repeat center center fixed;
+    background: #c19e71;
     background-size: cover;
 }
 body {
     color: #fff;
     text-align: center;
     text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+.inner {
+
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -62,7 +66,19 @@ body {
 
 /* Padding for spacing */
 .inner {
-    padding: 30px;
+    min-height: 600px;
+    max-height: 650px;
+    background-image: url("http://files.vividscreen.info/soft/609cfdb872f32faa31e69a09f21e0731/Retro-Car-on-Highway-1920x1200.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.caro {
+    max-height: 650px;
+    padding-top: -50px;
 }
 
 
