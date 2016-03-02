@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <base href="<?php echo base_url()?>">
+
     <link rel="icon" href="../../favicon.ico">
 
     <title>Pöidlapüüdja</title>
@@ -59,10 +60,10 @@
                 <div class="navbar-collapse collapse">
 
                     <ul class="nav navbar-nav">
-                        <li><a href="pealeht">PEALEHT</a></li>
-                        <li><a href="soidud">SÕIDUD</a></li>
-                        <li><a href="kasutajad">KASUTAJAD</a></li>
-                        <li><a href="minusoidud">MINU SÕIDUD</a></li>
+                        <li><a href="#">PEALEHT</a></li>
+                        <li><a href="#">SÕIDUD</a></li>
+                        <li><a href="#">KASUTAJAD</a></li>
+                        <li><a href="#">MINU SÕIDUD</a></li>
                     </ul>
                 </div>
 
@@ -78,45 +79,55 @@
             </div>
 
         </div>
-
-
-
-
     </div>
+    <div class="row">
+        <div class="inner">
 
-    <div class="row"></div>
-    <div class="inner">
-        <div id="myCarousel" class="carousel slide container" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
+            <div class="caro">
+                <div id="myCarousel" class="carousel slide container" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="resources/bemm.jpg" class="img-rounded" alt="Ränk bemm">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="resources/bemm.jpg" class="img-rounded" alt="Ränk bemm">
+                        </div>
+
+                        <div class="item">
+                            <img src="resources/velg.jpg" class="img-rounded" alt="Ränk velg">
+                        </div>
+
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-
-                <div class="item">
-                    <img src="resources/velg.jpg" class="img-rounded" alt="Ränk velg">
-                </div>
-
             </div>
 
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
     </div>
+    <div class="row">
+
+        <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        <p>CONTACT at martimutso@gmail.com for more information.</p>
+
+
+    </div>
+
+
+
 </div>
 
 <!-- Bootstrap core JavaScript
