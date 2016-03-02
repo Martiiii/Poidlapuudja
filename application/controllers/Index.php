@@ -9,6 +9,10 @@
 class Index extends CI_Controller
 {
     public function pealeht() {
+        $this->load->database();
+        // $sql = "mingiparing";
+        // $query = $this->db->query($sql);
+        // $data['minginimi'] = $query->result();
         $this->load->helper('url');
         $this->load->view('index');
     }
