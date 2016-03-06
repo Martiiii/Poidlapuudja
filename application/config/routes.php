@@ -49,10 +49,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+
 $route['pealeht'] = 'index/pealeht';
 $route['kasutajad'] = 'index/kasutajad';
 $route['soidud'] = 'index/soidud';
 $route['minusoidud'] = 'index/minusoidud';
+$route['kaart'] = 'index/site_map';
+$route['kaart\.xml'] = "index/sitemap";
 //$route['(:any)'] = 'index/view/$1';
 $route['default_controller'] = 'index/pealeht';
 

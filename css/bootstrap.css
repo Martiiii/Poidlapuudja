@@ -5223,6 +5223,8 @@ a.thumbnail.active {
   margin-bottom: -1px;
   background-color: #fff;
   border: 1px solid #ddd;
+  color: #00ffe1;
+  
 }
 .list-group-item:first-child {
   border-top-left-radius: 4px;
@@ -5848,6 +5850,7 @@ button.close {
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   outline: 0;
+  background-color: inherit;
 }
 .modal.fade .modal-dialog {
   -webkit-transition: -webkit-transform .3s ease-out;
@@ -5912,10 +5915,12 @@ button.close {
 .modal-title {
   margin: 0;
   line-height: 1.42857143;
+  color: #24060c;
 }
 .modal-body {
   position: relative;
   padding: 15px;
+
 }
 .modal-footer {
   padding: 15px;

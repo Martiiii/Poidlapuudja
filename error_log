@@ -1,0 +1,50 @@
+[02-Mar-2016 15:21:51 Europe/Tallinn] PHP Fatal error:  Call to a member function database() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 36
+[02-Mar-2016 15:21:51 Europe/Tallinn] PHP Fatal error:  Call to a member function database() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 36
+[02-Mar-2016 15:22:00 Europe/Tallinn] PHP Fatal error:  Call to a member function database() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 36
+[02-Mar-2016 15:22:10 Europe/Tallinn] PHP Fatal error:  Call to a member function database() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 36
+[02-Mar-2016 15:22:17 Europe/Tallinn] PHP Fatal error:  Call to a member function database() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 36
+[02-Mar-2016 15:22:21 Europe/Tallinn] PHP Fatal error:  Call to a member function database() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 36
+[02-Mar-2016 15:22:37 Europe/Tallinn] PHP Fatal error:  Call to a member function database() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 36
+[02-Mar-2016 15:24:01 Europe/Tallinn] PHP Parse error:  syntax error, unexpected end of file in /webpages/poialcsut/public_html/application/views/minusoidud.php on line 123
+[02-Mar-2016 15:24:27 Europe/Tallinn] PHP Parse error:  syntax error, unexpected end of file in /webpages/poialcsut/public_html/application/views/minusoidud.php on line 123
+[02-Mar-2016 15:24:28 Europe/Tallinn] PHP Parse error:  syntax error, unexpected end of file in /webpages/poialcsut/public_html/application/views/minusoidud.php on line 123
+[02-Mar-2016 15:24:36 Europe/Tallinn] PHP Parse error:  syntax error, unexpected end of file in /webpages/poialcsut/public_html/application/views/minusoidud.php on line 123
+[02-Mar-2016 15:24:36 Europe/Tallinn] PHP Parse error:  syntax error, unexpected end of file in /webpages/poialcsut/public_html/application/views/minusoidud.php on line 123
+[02-Mar-2016 15:24:37 Europe/Tallinn] PHP Parse error:  syntax error, unexpected end of file in /webpages/poialcsut/public_html/application/views/minusoidud.php on line 123
+[04-Mar-2016 11:37:23 Europe/Tallinn] PHP Parse error:  syntax error, unexpected end of file in /webpages/poialcsut/public_html/application/views/soidud.php on line 178
+[04-Mar-2016 11:38:08 Europe/Tallinn] PHP Parse error:  syntax error, unexpected end of file in /webpages/poialcsut/public_html/application/views/soidud.php on line 178
+[04-Mar-2016 11:38:12 Europe/Tallinn] PHP Parse error:  syntax error, unexpected end of file in /webpages/poialcsut/public_html/application/views/soidud.php on line 178
+[04-Mar-2016 16:36:30 Europe/Tallinn] PHP Parse error:  syntax error, unexpected 'Paste' (T_STRING) in /webpages/poialcsut/public_html/application/controllers/Index.php on line 90
+[04-Mar-2016 17:19:00 Europe/Tallinn] PHP Fatal error:  Call to undefined function lisakasutaja() in /webpages/poialcsut/public_html/application/controllers/Index.php on line 56
+[05-Mar-2016 20:12:11 Europe/Tallinn] PHP Parse error:  syntax error, unexpected end of file in /webpages/poialcsut/public_html/application/views/index.php on line 211
+[05-Mar-2016 20:12:44 Europe/Tallinn] PHP Parse error:  syntax error, unexpected end of file in /webpages/poialcsut/public_html/application/views/index.php on line 211
+[05-Mar-2016 20:12:45 Europe/Tallinn] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting ',' or ';' in /webpages/poialcsut/public_html/application/views/index.php on line 123
+[06-Mar-2016 13:41:53 Europe/Tallinn] PHP Parse error:  syntax error, unexpected 'version' (T_STRING) in /webpages/poialcsut/public_html/application/views/kaart.php on line 1
+[06-Mar-2016 15:58:45 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '<' in /webpages/poialcsut/public_html/application/views/index.php on line 48
+[06-Mar-2016 15:59:51 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '<' in /webpages/poialcsut/public_html/application/views/index.php on line 70
+[06-Mar-2016 17:31:24 Europe/Tallinn] PHP Parse error:  syntax error, unexpected ''Sulge'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /webpages/poialcsut/public_html/application/views/lang.php on line 93
+[06-Mar-2016 17:32:35 Europe/Tallinn] PHP Parse error:  syntax error, unexpected ''Sulge'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /webpages/poialcsut/public_html/application/views/lang.php on line 93
+[06-Mar-2016 17:32:36 Europe/Tallinn] PHP Parse error:  syntax error, unexpected ''Sulge'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /webpages/poialcsut/public_html/application/views/lang.php on line 93
+[06-Mar-2016 17:32:38 Europe/Tallinn] PHP Parse error:  syntax error, unexpected ''Sulge'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /webpages/poialcsut/public_html/application/views/lang.php on line 93
+[06-Mar-2016 17:32:47 Europe/Tallinn] PHP Parse error:  syntax error, unexpected ''Sulge'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /webpages/poialcsut/public_html/application/views/lang.php on line 93
+[06-Mar-2016 18:09:54 Europe/Tallinn] PHP Parse error:  syntax error, unexpected 'Sihtkoht' (T_STRING) in /webpages/poialcsut/public_html/application/language/estonian/est_lang.php on line 30
+[06-Mar-2016 18:22:43 Europe/Tallinn] PHP Fatal error:  Call to undefined function change_lang() in /webpages/poialcsut/public_html/application/views/index.php on line 76
+[06-Mar-2016 18:24:48 Europe/Tallinn] PHP Fatal error:  Call to a member function change_lang() on null in /webpages/poialcsut/public_html/application/views/index.php on line 76
+[06-Mar-2016 18:24:49 Europe/Tallinn] PHP Fatal error:  Call to a member function change_lang() on null in /webpages/poialcsut/public_html/application/views/index.php on line 76
+[06-Mar-2016 18:24:54 Europe/Tallinn] PHP Fatal error:  Call to a member function change_lang() on null in /webpages/poialcsut/public_html/application/views/index.php on line 76
+[06-Mar-2016 18:25:35 Europe/Tallinn] PHP Fatal error:  Call to undefined method CI_Loader::change_lang() in /webpages/poialcsut/public_html/application/views/index.php on line 76
+[06-Mar-2016 19:05:14 Europe/Tallinn] PHP Fatal error:  Call to a member function userdata() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 17
+[06-Mar-2016 19:07:03 Europe/Tallinn] PHP Fatal error:  Call to a member function set_userdata() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 13
+[06-Mar-2016 19:09:07 Europe/Tallinn] PHP Fatal error:  Call to a member function set_userdata() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 14
+[06-Mar-2016 21:09:52 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '<' in /webpages/poialcsut/public_html/application/views/soidud.php on line 47
+[06-Mar-2016 21:24:06 Europe/Tallinn] PHP Fatal error:  Access to undeclared static property: Index::$language in /webpages/poialcsut/public_html/application/controllers/Index.php on line 115
+[06-Mar-2016 21:24:57 Europe/Tallinn] PHP Fatal error:  Access to undeclared static property: Index::$language in /webpages/poialcsut/public_html/application/controllers/Index.php on line 115
+[06-Mar-2016 21:24:58 Europe/Tallinn] PHP Fatal error:  Access to undeclared static property: Index::$language in /webpages/poialcsut/public_html/application/controllers/Index.php on line 115
+[06-Mar-2016 21:24:59 Europe/Tallinn] PHP Fatal error:  Access to undeclared static property: Index::$language in /webpages/poialcsut/public_html/application/controllers/Index.php on line 115
+[06-Mar-2016 21:25:00 Europe/Tallinn] PHP Fatal error:  Access to undeclared static property: Index::$languageloc in /webpages/poialcsut/public_html/application/controllers/Index.php on line 45
+[06-Mar-2016 21:25:03 Europe/Tallinn] PHP Fatal error:  Access to undeclared static property: Index::$languageloc in /webpages/poialcsut/public_html/application/controllers/Index.php on line 45
+[06-Mar-2016 21:25:04 Europe/Tallinn] PHP Fatal error:  Access to undeclared static property: Index::$languageloc in /webpages/poialcsut/public_html/application/controllers/Index.php on line 58
+[06-Mar-2016 21:25:05 Europe/Tallinn] PHP Fatal error:  Access to undeclared static property: Index::$languageloc in /webpages/poialcsut/public_html/application/controllers/Index.php on line 72
+[06-Mar-2016 21:25:11 Europe/Tallinn] PHP Fatal error:  Access to undeclared static property: Index::$language in /webpages/poialcsut/public_html/application/controllers/Index.php on line 115
+[06-Mar-2016 21:25:13 Europe/Tallinn] PHP Fatal error:  Access to undeclared static property: Index::$language in /webpages/poialcsut/public_html/application/controllers/Index.php on line 115
+[06-Mar-2016 21:58:03 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '?>' in /webpages/poialcsut/public_html/application/views/index.php on line 40

@@ -64,7 +64,7 @@ body {
 /* Padding for spacing */
 .inner {
     min-height: 600px;
-    max-height: 650px;
+    max-height: 600px;
     background-image: url("http://files.vividscreen.info/soft/609cfdb872f32faa31e69a09f21e0731/Retro-Car-on-Highway-1920x1200.jpg");
     -webkit-background-size: cover;
     background-size: cover;
@@ -72,6 +72,11 @@ body {
     padding-top: 50px;
     padding-bottom: 50px;
     min-width: 100%;
+}
+
+.veebihead {
+    text-decoration: underline;
+    font-size: 250%;
 }
 
 .caro {
@@ -88,11 +93,15 @@ body {
     margin-bottom: 10px;
     max-width: 100%;
 
-
-
-
-
 }
+
+.list-group > li > a {
+    letter-spacing: 2px;
+    line-height: 4;
+}
+
+
+
 
 .masthead-nav > li {
     display: inline-flex;
