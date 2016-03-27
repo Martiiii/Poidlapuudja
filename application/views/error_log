@@ -1,0 +1,2 @@
+[26-Mar-2016 22:15:51 Europe/Tallinn] PHP Fatal error:  Call to undefined function base_url() in /webpages/poialcsut/public_html/application/views/index.php on line 10
+[26-Mar-2016 22:16:16 Europe/Tallinn] PHP Fatal error:  Call to undefined function base_url() in /webpages/poialcsut/public_html/application/views/index.php on line 10

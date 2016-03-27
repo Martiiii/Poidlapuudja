@@ -36,6 +36,9 @@ $lang = array(
         'Lisainfo'=>'Description',
         'Aeg'=>'Time',
         'Liitumise_aeg'=>'Date joined',
+		'Kasutajanimi'=>'Username: ',
+		'Kasutajanimi1'=>'Username',
+
 
 
 
@@ -43,6 +46,8 @@ $lang = array(
         ),
 	'est'=>array(
 		'pealeht'=>'PEALEHT',
+		'Kasutajanimi'=>'Kasutajanimi: ',
+		'Kasutajanimi1'=>'Kasutajanimi',
 		'hello'=>'TERE',
 		'Soidud'=>'SÕIDUD',
 		'Kasutajad'=>'KASUTAJAD',

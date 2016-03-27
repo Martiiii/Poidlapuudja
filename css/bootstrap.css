@@ -2604,6 +2604,10 @@ fieldset[disabled] .form-control {
 fieldset[disabled] .form-control {
   cursor: not-allowed;
 }
+.gmaps {
+  width:280px;
+  height:280px;
+}
 textarea.form-control {
   height: auto;
 }

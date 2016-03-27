@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
 <meta charset="UTF-8">
 
@@ -33,6 +33,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/demo.js"></script>
+    <script src="js/interactiveinfo.js"></script>
  
 </head>
  
@@ -66,25 +67,28 @@ $default = ($_GET['lang']=='') ? 'en' : $_GET['lang'];*/
                 <div class="navbar-collapse collapse">
 
                     <ul class="nav navbar-nav">
-
-                        <li><a href="pealeht<?php echo "/?lang=en" ?>"><?php echo $this->lang->line('pealeht') ?></a></li>
-                        <li><a href="soidud<?php echo "/?lang=en" ?>"><?php echo $this->lang->line('Soidud') ?> </a></li>
-                        <li><a href="kasutajad<?php echo "/?lang=en" ?>"><?php echo $this->lang->line('Kasutajad') ?> </a></li>
-                        <li><a href="minusoidud<?php echo "/?lang=en" ?>"><?php echo $this->lang->line('Minusoidud') ?> </a></li>
+                        <div id="hintbox"></div>
+                        <li><a href="pealeht"><?php echo $this->lang->line('pealeht') ?></a></li>
+                        <li><a href="soidud"><?php echo $this->lang->line('Soidud') ?> </a></li>
+                        <li><a href="kasutajad"><?php echo $this->lang->line('Kasutajad') ?> </a></li>
+                        <li><a href="minusoidud"><?php echo $this->lang->line('Minusoidud') ?> </a></li>
                     </ul>
  
                 </div>
  
             </div>
         </div>
- 
+
         <div class="col-lg-4 col-sm-push-0 col-sm-4">
             <div class="regbar">
                 <div class="navbar-collapse collapse">
-                    <button class="btn btn-default"><?php echo $this->lang->line('Logi') ?></button>
-                    <button class="btn btn-default" data-toggle="modal" data-target="#modal"><?php echo $this->lang->line('Rega') ?></button>
+                    <button id="eng" class="btn btn-primary" data-hinttext="<?php echo $this->lang->line('inglise'); ?>" >ENG</button>
+                    <button id="est" class="btn btn-primary" data-hinttext="<?php echo $this->lang->line('eesti'); ?>" >EST</button>
+                    <button id="logout" class="btn btn-primary" data-hinttext="<?php echo $this->lang->line('logivalja'); ?>"><?php echo $this->lang->line('logout') ?></button>
+                    <p><?php echo $this->lang->line('Tere, ') ?> <?php echo $this->session->userdata['logged_in']['username'] ?></p>
                 </div>
             </div>
+
         </div>
  
     </div>
@@ -119,70 +123,7 @@ $default = ($_GET['lang']=='') ? 'en' : $_GET['lang'];*/
             </div>
         </div>
     </div>
- 
-    <div id="modal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <form id="regamine" class = "form-horizontal">
-                <div class="modal-content">
-                    <button class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"><?php echo $this->lang->line('Registreeru') ?></h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-8 col-xs-12">
 
-
-
-                            <div class="form-group">
-                                <label class="col-lg-2 control-label"><?php echo $this->lang->line('Eesnimi')?></label>
-                                <div class="col-lg-10">
-                                    <input title="eesnimi" type="text" class="form-control" name="eesnimi" id="eesnimi" placeholder=<?php echo $this->lang->line('Eesnimi1')?>>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-lg-2 control-label"><?php echo $this->lang->line('Perenimi')?></label>
-                                <div class="col-lg-10">
-                                    <input title="perenimi" type="text" class="form-control" name="perenimi" id="perenimi" placeholder=<?php echo $this->lang->line('Perenimi1')?>>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label  class="col-lg-2 control-label"><?php echo $this->lang->line('Parool')?></label>
-                                <div class="col-lg-10">
-                                    <input title="parool" type="password" class="form-control" name="parool" id="parool" placeholder=<?php echo $this->lang->line('Parool1')?>>
-                                </div>
-                            </div>
-
-
-                            <div class="form-group">
-                                <label class="col-lg-2 control-label"><?php echo $this->lang->line('Email')?></label>
-                                <div class="col-lg-10">
-                                    <input title="email" type="text" class="form-control" name="email" id="email" placeholder=<?php echo $this->lang->line('Email1')?>>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label  class="col-lg-2 control-label"><?php echo $this->lang->line('Telefon') ?></label>
-                                <div class="col-lg-10">
-                                    <input title="telnr" type="text" class="form-control" name="telnr" id="telnr" placeholder="00000000">
-                                </div>
-                            </div>
-
-
-
-                            <div class="modal-footer">
-                                <button id = "regamisnupp" type = "submit" class = "btn btn-primary"><?php echo $this->lang->line('Rega') ?></button>
-                                <button id = "closenupp" type = "submit" class = "btn btn-default" data-dismiss="modal"><?php echo $this->lang->line('Sulge') ?></button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
- 
-            </form>
-        </div>
-    </div>
  
 </div>
  

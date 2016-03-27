@@ -10,11 +10,24 @@ $(document).ready(function(){
 
     });
 
+    $('#logout').click(function () {
+        $.ajax({
+            type: "POST",
+            url: "index/logout/",
+            success: function() {
+                window.location.reload();
+            }
+        })
+
+    });
+
     $('#eng').click(function () {
         $.ajax({
             type: "POST",
-            url: "index.php/index/change_lang/",
-            data: {value:'eng'}
+            url: "index/change_lang_toEng/",
+            success: function() {
+                window.location.reload();
+            }
         })
 
     });
@@ -22,8 +35,40 @@ $(document).ready(function(){
     $('#est').click(function () {
         $.ajax({
             type: "POST",
-            url: "index.php/index/change_lang/",
-            data: {value:'est'}
+            url: "index/change_lang_toEst/",
+            success: function() {
+                window.location.reload();
+            }
+
+        })
+
+    });
+
+    $('#engout').click(function () {
+        $.ajax({
+            type: "POST",
+            url: "index/change_lang_toEng/",
+            success: function(messageforyou)
+            {
+
+                window.location.href = "login/index2";
+
+            }
+        })
+
+    });
+
+    $('#estout').click(function () {
+        $.ajax({
+            type: "POST",
+            url: "index/change_lang_toEst/",
+            success: function(messageforyou)
+            {
+
+                window.location.href = "login/index2";
+
+            }
+
         })
 
     });
@@ -34,7 +79,7 @@ $(document).ready(function(){
 
             type: "POST",
 
-            url: "index.php/index/lisauudis/",
+            url: "index/lisauudis/",
             data: $("#regamine :input").serializeArray(),
             success: function(messageforyou)
             {
@@ -51,8 +96,11 @@ $(document).ready(function(){
         $('#modal').modal('hide');
     });
 
+
+
     $("#regamine").submit( function() {
         return false
     });
+
 
 });

@@ -32,6 +32,15 @@ $lang['Autojuht']="Autojuht";
 $lang['Lisainfo']="Lisainfo";
 $lang['Aeg']="Aeg";
 $lang['Liitumise_aeg']="Liitumise aeg";
-	
-
+$lang['Kasutajanimi']="Kasutajanimi: ";
+$lang['Kasutajanimi1']="Kasutajanimi";
+$lang['Logi_sisse']="Sisene";
+$lang['Registreerimiseks vajuta']='Registreerimiseks vajuta';
+$lang['inglise']="Inglise keel";
+$lang['eesti']="Eesti keel";
+$lang['Sisene Facebookiga']="Sisene Facebookiga";
+$lang['Tere, ']="Tere, ";
+$lang['logout']="LOGI VÄLJA";
+$lang['logivalja']="Siit saad välja logida";
+$lang['faktid']='Mõned faktid rakenduse kohta';
 ?>

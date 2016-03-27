@@ -35,7 +35,7 @@ $config['base_url'] = 'http://poial.cs.ut.ee/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ $config['index_page'] = 'index.php';
 |
 | WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
 */
-$config['uri_protocol']	= 'REQUEST_URI';
+$config['uri_protocol']	= 'AUTO';
 
 /*
 |--------------------------------------------------------------------------
@@ -314,7 +314,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = 'seeonminusuperheakey';
+$config['encryption_key'] = '89e345fde5c8149d9d945c141bfb6b1d39823e639ac21af64c8aca6186dab286';
 
 /*
 |--------------------------------------------------------------------------
@@ -369,7 +369,7 @@ $config['encryption_key'] = 'seeonminusuperheakey';
 */
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
-$config['sess_expiration'] = 0;
+$config['sess_expiration'] = 180;
 $config['sess_save_path'] = BASEPATH . 'cache/';
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 600;

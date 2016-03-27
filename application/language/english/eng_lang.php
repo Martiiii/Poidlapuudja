@@ -32,7 +32,16 @@ $lang['Autojuht']="Driver";
 $lang['Lisainfo']="Description";
 $lang['Aeg']="Time";
 $lang['Liitumise_aeg']="Time joined";
-
-
+$lang['Kasutajanimi']="Username: ";
+$lang['Kasutajanimi1']="Username";
+$lang['Logi_sisse'] = "Log in";
+$lang['Registreerimiseks vajuta']="To register click here";
+$lang['inglise']="English";
+$lang['eesti']="Estonian";
+$lang['Sisene Facebookiga']= "Log in with Facebook";
+$lang['Tere, ']="Hello, ";
+$lang['logout']="LOG OUT";
+$lang['logivalja']="Log out from here";
+$lang['faktid']='Some facts about the application';
 
 ?>
