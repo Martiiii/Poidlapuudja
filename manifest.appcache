@@ -1,0 +1,23 @@
+﻿CACHE MANIFEST
+
+# v 10
+
+NETWORK:
+*
+
+CACHE:
+css/bootstrap.css
+css/cover.css
+css/bootstrap-theme.css
+js/bootstrap.js
+js/demo.js
+js/facebook.js
+js/global.js
+js/interactiveinfo.js
+js/loadafterusers.js
+js/map.js
+js/SoitudeTabel.js
+js/npm.js
+
+FALLBACK:
+/ offline.html

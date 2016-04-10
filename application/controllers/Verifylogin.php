@@ -19,12 +19,14 @@ class VerifyLogin extends CI_Controller {
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('kasutajanimi', 'Kasutajanimi', 'trim|required');
-        $this->form_validation->set_rules('parool', 'Parool', 'trim|required|callback_check_database');
+        $this->form_validation->set_rules('parool', 'Parool', 'trim|required|min_length[8]|max_length[30]|callback_check_database');
 
         if($this->form_validation->run() == FALSE)
         {
 //Field validation failed.  User redirected to login page
-            $this->load->view('index_out');
+            $tekst = validation_errors();
+            $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">'.$tekst.'</div>');
+            redirect('login', 'refresh');
 
         }
         else
@@ -37,15 +39,47 @@ class VerifyLogin extends CI_Controller {
 
     function fb()
     {
+        $this->load->database();
+        $id = $this->input->post('id');
+        $username = $this->input->post('name');
+        $pieces = explode(" ", $username);
+        $eesnimi = $pieces[0]; // piece1
+        $perenimi = $pieces[1]; // piece2
+        $email = "";
+        $telefoninumber = "";
+        $parool = "";
 
+        $sql = "SELECT * FROM kuvakasutajad WHERE kasutajanimi='$username'" ;
+        $query = $this->db->query($sql);
 
-        $sess_array = array(
-            'ID' => $this->input->post('id'),
-            'username' => $this->input->post('name')
-        );
-        $this->session->set_userdata('logged_in', $sess_array);
+        if ($query->num_rows() > 0) {
+            $sess_array = array(
+                'ID' => $id,
+                'username' => $username
+            );
+            $this->session->set_userdata('logged_in', $sess_array);
+            redirect('index/pealeht', 'refresh');
 
-        redirect('index/pealeht', 'refresh');
+        } else {
+            if ($this->db->query("CALL lisakasutaja('$username', '$eesnimi', '$perenimi', '$email', '$parool', '$telefoninumber')"))
+            {
+                $sess_array = array(
+                    'ID' => $id,
+                    'username' => $username
+                );
+                $this->session->set_userdata('logged_in', $sess_array);
+                redirect('index/pealeht', 'refresh');
+
+            }
+            else
+            {
+                // error
+
+                redirect('login', 'refresh');
+
+            }
+        }
+
 
     }
 

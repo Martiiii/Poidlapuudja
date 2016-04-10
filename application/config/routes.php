@@ -49,7 +49,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-
+$route['ebaonnestus']='Index/ebaonnestus';
+$route['onnestus']='Index/onnestus';
+$route['receive']='Index/receive';
+$route['anneta'] = 'Index/anneta';
+$route['kontakt'] = 'Index/kontakt';
 $route['index_out'] = 'login/index';
 $route['pealeht'] = 'Index/pealeht';
 $route['kasutajad'] = 'Index/kasutajad';
@@ -58,6 +62,8 @@ $route['minusoidud'] = 'Index/minusoidud';
 $route['kaart'] = 'Index/site_map';
 $route['kaart\.xml'] = "Index/sitemap";
 $route['default_controller'] = 'login';
+$route['Proovifail'] = "Index/Proovifail";
+$route['manifest.appcache'] = "Index/cache";
 //$route['(:any)'] = 'login/index';
 
 

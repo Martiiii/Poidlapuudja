@@ -6,3 +6,4 @@
     RewriteCond $1 !^(index\.php|images|css|js|robots\.txt|favicon\.ico)
     RewriteRule ^(.*)$ index.php?/$1 [L,QSA]
 </IfModule>
+AddType text/cache-manifest appcache manifest .appcache .manifest

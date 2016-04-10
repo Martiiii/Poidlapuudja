@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="et" manifest="/manifest.appcache">
 <head>
     <meta charset="utf-8">
     
@@ -11,7 +11,7 @@
 
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Pöidlapüüdja</title>
+    <title>Pöidlapüüdja - Pealeht</title>
 
     <!-- Bootstrap core CSS -->
     
@@ -30,8 +30,11 @@
 
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js">\x3C/script>')</script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js">\x3C/script>')</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js">\x3C/script>')</script>
     <script src="js/demo.js"></script>
     <script src="js/global.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
@@ -81,10 +84,10 @@
                     <button id="eng" class="btn btn-primary" data-hinttext="<?php echo $this->lang->line('inglise'); ?>" >ENG</button>
                     <button id="est" class="btn btn-primary" data-hinttext="<?php echo $this->lang->line('eesti'); ?>" >EST</button>
                     <button id="logout" class="btn btn-primary" data-hinttext="<?php echo $this->lang->line('logivalja'); ?>"><?php echo $this->lang->line('logout') ?></button>
+               <!--    <button id="anneta"  href="anneta" class="btn btn-primary">Anneta</button> -->
                     <p><?php echo $this->lang->line('Tere, ') ?> <?php echo $this->session->userdata['logged_in']['username'] ?></p>
                 </div>
             </div>
-
         </div>
     </div>
     <div class="row">
@@ -141,7 +144,7 @@
     <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
-            <p>CONTACT at martimutso@gmail.com for more information.</p>
+            <a href="kontakt">KONTAKT</a>
             <p><a href="kaart"><?php echo $this->lang->line('Lehe_kaart'); ?></a></p>
         </div>
 

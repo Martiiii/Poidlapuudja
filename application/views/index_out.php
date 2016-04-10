@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="et" manifest="manifest.appcache">
 <head>
     <meta charset="utf-8">
     
@@ -11,7 +11,7 @@
 
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Pöidlapüüdja</title>
+    <title>Pöidlapüüdja - Avaleht</title>
 
     <!-- Bootstrap core CSS -->
     
@@ -28,12 +28,15 @@
     <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/ie-emulation-modes-warning.js"></script>
 
-
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js">\x3C/script>')</script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js">\x3C/script>')</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js">\x3C/script>')</script>
     <script src="js/demo.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initialize"
+            async defer></script>
     <script src="js/map.js"></script>
     <script src="http://connect.facebook.net/en_US/all.js"></script>
     <script src="js/facebook.js"></script>
@@ -43,7 +46,11 @@
 
 <body>
 <div class="container-fluid">
-
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <?php echo $this->session->flashdata('msg'); ?>
+        </div>
+    </div>
     <div class="row">
 
         <div class="col-lg-8  col-sm-8 ">
@@ -63,6 +70,7 @@
 
                     <ul class="nav navbar-nav">
                         <div id="hintbox"></div>
+                        <li><a href="anneta">TOETA MEID!</a></li>
                     </ul>
                 </div>
 
@@ -129,14 +137,14 @@
     <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
-            <p>CONTACT at martimutso@gmail.com for more information.</p>
+            <a href="kontakt">KONTAKT</a>
         </div>
     </div>
 
 
     <div id="modal" class="modal fade" role="dialog">
         <div class="modal-dialog">
-            <form id="regamine" class = "form-horizontal">
+            <form id="regamine" class = "form-horizontal" action="http://poial.cs.ut.ee/index/lisauudis" method="post" accept-charset="utf-8" >
                 <div class="modal-content">
                     <button class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title"><?php echo $this->lang->line('Registreeru'); ?></h4>
@@ -148,35 +156,35 @@
                             <div class="form-group">
                                 <label class="col-lg-4 control-label"><?php echo $this->lang->line('Kasutajanimi');?></label>
                                 <div class="col-lg-8">
-                                    <input title="kasutajanimi" type="text" class="form-control" name="kasutajanimi" id="kasutajanimi" placeholder=<?php echo $this->lang->line('Kasutajanimi1');?>>
+                                    <input title="kasutajanimi" type="text" class="form-control" name="kasutajanimi" id="kasutajanimi" placeholder="<?php echo $this->lang->line('Kasutajanimi1');?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-lg-4 control-label"><?php echo $this->lang->line('Eesnimi');?></label>
                                 <div class="col-lg-8">
-                                    <input title="eesnimi" type="text" class="form-control" name="eesnimi" id="eesnimi" placeholder=<?php echo $this->lang->line('Eesnimi1');?>>
+                                    <input title="eesnimi" type="text" class="form-control" name="eesnimi" id="eesnimi" placeholder="<?php echo $this->lang->line('Eesnimi1');?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-lg-4 control-label"><?php echo $this->lang->line('Perenimi');?></label>
                                 <div class="col-lg-8">
-                                    <input title="perenimi" type="text" class="form-control" name="perenimi" id="perenimi" placeholder=<?php echo $this->lang->line('Perenimi1');?>>
+                                    <input title="perenimi" type="text" class="form-control" name="perenimi" id="perenimi" placeholder="<?php echo $this->lang->line('Perenimi1');?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label  class="col-lg-4 control-label"><?php echo $this->lang->line('Parool');?></label>
                                 <div class="col-lg-8">
-                                    <input title="parool" type="password" class="form-control" name="parool" id="parool" placeholder=<?php echo $this->lang->line('Parool1');?>>
+                                    <input title="parool" type="password" class="form-control" name="parool" id="parool" placeholder="<?php echo $this->lang->line('Parool1');?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-lg-4 control-label"><?php echo $this->lang->line('Email');?></label>
                                 <div class="col-lg-8">
-                                    <input title="email" type="text" class="form-control" name="email" id="email" placeholder=<?php echo $this->lang->line('Email1');?>>
+                                    <input title="email" type="text" class="form-control" name="email" id="email" placeholder="<?php echo $this->lang->line('Email1');?>">
                                 </div>
                             </div>
 
@@ -199,6 +207,9 @@
             </form>
         </div>
     </div>
+
+
+
 
     <div id="modallogin" class="modal fade" role="dialog">
         <div class="modal-dialog">

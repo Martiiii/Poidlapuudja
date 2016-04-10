@@ -5,7 +5,7 @@ $(document).ready(function() {
     $('.btn').mousemove(function(e){
             var hovertext = $(this).attr('data-hinttext');
             $('#hintbox').text(hovertext).show();
-            $('#hintbox').css('top', e.clientY+20).css('left', e.clientX);})
+            $('#hintbox').css('top', e.clientY+20).css('left', e.clientX).css('z-index', '999');})
         .mouseout(function(){
             $('#hintbox').hide();
         });

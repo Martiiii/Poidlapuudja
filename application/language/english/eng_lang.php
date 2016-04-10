@@ -23,7 +23,7 @@ $lang['Telefon']="Phone: ";
 $lang['Sulge']="Close";
 $lang['Eesnimi1']="First name";
 $lang['Perenimi1']="Last name";
-$lang['Parool1']="Password";
+$lang['Parool1']="Password min 8 letters";
 $lang['Email1']="Email";
 $lang['Telefon1']="Phone";
 $lang['Lähtekoht']="Start";
@@ -43,5 +43,13 @@ $lang['Tere, ']="Hello, ";
 $lang['logout']="LOG OUT";
 $lang['logivalja']="Log out from here";
 $lang['faktid']='Some facts about the application';
-
+$lang['loo_soit_hint']="Here you can create a new trip";
+$lang['loo_soit']="Create a trip";
+$lang['lahtekoht']='Start';
+$lang['sihtkoht']='Destination';
+$lang['lisainfo']='Information';
+$lang['lisa_soit_nupp']='Create a trip';
+$lang['sulge_soit']='Cancel';
+$lang['lisa_soit_nupp_hint']='Click to create a new trip';
+$lang['sulge_soit_hint']='Click to cancel';
 ?>

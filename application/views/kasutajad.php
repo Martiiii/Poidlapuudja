@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="et">
+<html lang="et" manifest="/manifest.appcache">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <base href="<?php echo base_url()?>">
-    <title>Pöidlapüüdja</title>
+    <title>Pöidlapüüdja - Kasutajad</title>
     <!-- Bootstrap core CSS -->
     
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -26,10 +26,15 @@
     <script src="js/ie-emulation-modes-warning.js"></script>
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js">\x3C/script>')</script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js">\x3C/script>')</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js">\x3C/script>')</script>
     <script src="js/demo.js"></script>
     <script src="js/interactiveinfo.js"></script>
+    <script src="js/loadafterusers.js"></script>
+
 
 </head>
 
@@ -72,6 +77,7 @@
                         <li><a href="minusoidud"><?php echo $this->lang->line('Minusoidud') ?> </a></li>
                     </ul>
 
+
                 </div>
 
             </div>
@@ -100,27 +106,35 @@
                     <tr>
                         <th class="text-center"><?php echo $this->lang->line('Eesnimi1') ?></th>
                         <th class="text-center"><?php echo $this->lang->line('Perenimi1') ?></th>
-                        <th class="text-center"><?php echo $this->lang->line('Email1') ?></th>
                         <th class="text-center"><?php echo $this->lang->line('Liitumise_aeg') ?></th>
                         <th class="text-center"><?php echo $this->lang->line('Telefon1') ?></th>
                         
                     </tr>
                     </thead>
-                    <tbody>
-                       <?foreach($kasutajad as $kasutaja): ?>
+                    <tbody id="usertable">
+                       <?
+                       $i = 0;
+                       foreach($kasutajad as $kasutaja):
+                           if(++$i == 11) break;
+                           ?>
 		     <tr>
 			<td><? echo $kasutaja->Eesnimi ?></td>
                         <td><? echo $kasutaja->Perenimi ?></td>
-			<td><? echo $kasutaja->Email ?></td>
                         <td><? echo $kasutaja->Liitumine ?></td>
 			<td><? echo $kasutaja->Telefoninumber ?></td>
 		       </tr>
-	              <?endforeach ?>    
+	              <?endforeach ?>
+
                </tbody>
+
                 </table>
+            </div>
+            <div class="row">
+                <input type="submit" onclick="users()" value="Laadi juurde"/>
             </div>
         </div>
     </div>
+
 
 
 </div>

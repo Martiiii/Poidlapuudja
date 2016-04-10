@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="et" manifest="/manifest.appcache">
 <head>
 <meta charset="UTF-8">
 
@@ -12,7 +12,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <base href="<?php echo base_url()?>">
-    <title>Pöidlapüüdja</title>
+    <title>Pöidlapüüdja - Sõidud</title>
  
     <!-- Bootstrap core CSS -->
     
@@ -28,21 +28,21 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/ie-emulation-modes-warning.js"></script>
- 
+
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js">\x3C/script>')</script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js">\x3C/script>')</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js">\x3C/script>')</script>
     <script src="js/demo.js"></script>
     <script src="js/interactiveinfo.js"></script>
+    <script src="js/SoitudeTabel.js"></script>
  
 </head>
  
 <body>
-<?php
-/*
-include('lang.php');
-$default = ($_GET['lang']=='') ? 'en' : $_GET['lang'];*/
-?>
+
 
 <div class="container-fluid">
  
@@ -85,6 +85,9 @@ $default = ($_GET['lang']=='') ? 'en' : $_GET['lang'];*/
                     <button id="eng" class="btn btn-primary" data-hinttext="<?php echo $this->lang->line('inglise'); ?>" >ENG</button>
                     <button id="est" class="btn btn-primary" data-hinttext="<?php echo $this->lang->line('eesti'); ?>" >EST</button>
                     <button id="logout" class="btn btn-primary" data-hinttext="<?php echo $this->lang->line('logivalja'); ?>"><?php echo $this->lang->line('logout') ?></button>
+                    <button class="btn btn-default" data-toggle="modal" data-hinttext="<?php echo $this->lang->line('loo_soit_hint') ?>" data-target="#modallisa"><?php echo $this->lang->line('loo_soit') ?></button>
+
+
                     <p><?php echo $this->lang->line('Tere, ') ?> <?php echo $this->session->userdata['logged_in']['username'] ?></p>
                 </div>
             </div>
@@ -92,10 +95,58 @@ $default = ($_GET['lang']=='') ? 'en' : $_GET['lang'];*/
         </div>
  
     </div>
- 
+    <div id="modallisa" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <form id="lisamine" class = "form-horizontal" action="http://poial.cs.ut.ee/index/lisasoit" method="post" accept-charset="utf-8" >
+                <div class="modal-content">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><?php echo $this->lang->line('loo_soit'); ?></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-8 col-xs-12">
+
+                            <div class="form-group">
+
+                                <label class="col-lg-4 control-label"><?php echo $this->lang->line('lahtekoht'); ?></label>
+                                <div class="col-lg-8">
+                                    <input title="<?php echo $this->lang->line('lahtekoht'); ?>" type="text" class="form-control" name="lahtekoht" id="lahtekoht" placeholder="<?php echo $this->lang->line('lahtekoht'); ?>" >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label"><?php echo $this->lang->line('sihtkoht'); ?></label>
+                                <div class="col-lg-8">
+                                    <input title="<?php echo $this->lang->line('sihtkoht'); ?>" type="text" class="form-control" name="sihtkoht" id="sihtkoht" placeholder="<?php echo $this->lang->line('sihtkoht'); ?>">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label  class="col-lg-4 control-label"><?php echo $this->lang->line('lisainfo'); ?></label>
+                                <div class="col-lg-8">
+                                    <input title="<?php echo $this->lang->line('lisainfo'); ?>" type="text" class="form-control" name="lisainfo" id="lisainfo" placeholder="<?php echo $this->lang->line('lisainfo'); ?>">
+                                </div>
+                            </div>
+
+
+
+                            <div class="modal-footer">
+                                <button id = "lisasoitnupp" onclick="soidud()" data-hinttext="<?php echo $this->lang->line('lisa_soit_nupp_hint'); ?>" type = "submit" class = "btn btn-primary"><?php echo $this->lang->line('lisa_soit_nupp'); ?></button>
+                                <button id = "closenupp" class = "btn btn-default" data-hinttext="<?php echo $this->lang->line('sulge_soit_hint'); ?>" data-dismiss="modal"><?php echo $this->lang->line('sulge_soit'); ?></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
     <div class="row">
         <div class="inner">
-            <div class="table-responsive">
+            <div class="table-responsive" id="soidudTable">
                 <table class="table">
                     <thead>
                     <tr>
@@ -107,7 +158,7 @@ $default = ($_GET['lang']=='') ? 'en' : $_GET['lang'];*/
  
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="innertable">
                     <?foreach($uudistekogu as $uudis): ?>
                         <tr>
                             <td><? echo $uudis->Lahtekoht ?></td>
@@ -115,7 +166,6 @@ $default = ($_GET['lang']=='') ? 'en' : $_GET['lang'];*/
                             <td><? echo $uudis->Autojuht ?></td>
                             <td><? echo $uudis->Lisainfo ?></td>
                             <td><? echo $uudis->Aeg ?></td>
- 
                         </tr>
                     <?endforeach ?>
                     </tbody>

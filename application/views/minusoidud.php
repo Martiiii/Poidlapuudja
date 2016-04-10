@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="et">
+<html lang="et" manifest="/manifest.appcache">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <base href="<?php echo base_url()?>">
-    <title>Pöidlapüüdja</title>
+    <title>Pöidlapüüdja - Minu sõidud</title>
 
     <!-- Bootstrap core CSS -->
     
@@ -27,8 +27,11 @@
     <script src="js/ie-emulation-modes-warning.js"></script>
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js">\x3C/script>')</script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js">\x3C/script>')</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js">\x3C/script>')</script>
     <script src="js/demo.js"></script>
     <script src="js/global.js"></script>
     <script src="js/interactiveinfo.js"></script>
@@ -89,7 +92,71 @@
             </div>
 
         </div>
+        <div id="modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <form id="lisasoit" class = "form-horizontal" action="http://poial.cs.ut.ee/index/lisasoit" method="post" accept-charset="utf-8" >
+                    <div class="modal-content">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><?php echo $this->lang->line('Registreeru'); ?></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-8 col-xs-12">
 
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label"><?php echo $this->lang->line('Kasutajanimi');?></label>
+                                    <div class="col-lg-8">
+                                        <input title="kasutajanimi" type="text" class="form-control" name="kasutajanimi" id="kasutajanimi" placeholder="<?php echo $this->lang->line('Kasutajanimi1');?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label"><?php echo $this->lang->line('Eesnimi');?></label>
+                                    <div class="col-lg-8">
+                                        <input title="eesnimi" type="text" class="form-control" name="eesnimi" id="eesnimi" placeholder="<?php echo $this->lang->line('Eesnimi1');?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label"><?php echo $this->lang->line('Perenimi');?></label>
+                                    <div class="col-lg-8">
+                                        <input title="perenimi" type="text" class="form-control" name="perenimi" id="perenimi" placeholder="<?php echo $this->lang->line('Perenimi1');?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label  class="col-lg-4 control-label"><?php echo $this->lang->line('Parool');?></label>
+                                    <div class="col-lg-8">
+                                        <input title="parool" type="password" class="form-control" name="parool" id="parool" placeholder="<?php echo $this->lang->line('Parool1');?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label"><?php echo $this->lang->line('Email');?></label>
+                                    <div class="col-lg-8">
+                                        <input title="email" type="text" class="form-control" name="email" id="email" placeholder="<?php echo $this->lang->line('Email1');?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label  class="col-lg-4 control-label"><?php echo $this->lang->line('Telefon'); ?></label>
+                                    <div class="col-lg-8">
+                                        <input title="telnr" type="text" class="form-control" name="telnr" id="telnr" placeholder="00000000">
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button id = "regamisnupp" type = "submit" class = "btn btn-primary"><?php echo $this->lang->line('Rega'); ?></button>
+                                    <button id = "closenupp" class = "btn btn-default" data-dismiss="modal"><?php echo $this->lang->line('Sulge'); ?></button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
 
 
     </div>
