@@ -70,7 +70,7 @@
 
                     <ul class="nav navbar-nav">
                         <div id="hintbox"></div>
-                        <li><a href="anneta">TOETA MEID!</a></li>
+                        <li><a href="anneta"><?php echo $this->lang->line('toeta_meid'); ?></a></li>
                     </ul>
                 </div>
 
@@ -137,7 +137,7 @@
     <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
-            <a href="kontakt">KONTAKT</a>
+            <a href="kontakt"><?php echo $this->lang->line('kontakt'); ?></a>
         </div>
     </div>
 

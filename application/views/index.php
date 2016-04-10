@@ -144,7 +144,7 @@
     <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
-            <a href="kontakt">KONTAKT</a>
+            <a href="kontakt"><?php echo $this->lang->line('kontakt'); ?></a>
             <p><a href="kaart"><?php echo $this->lang->line('Lehe_kaart'); ?></a></p>
         </div>
 

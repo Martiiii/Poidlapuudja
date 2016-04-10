@@ -52,4 +52,7 @@ $lang['lisa_soit_nupp']='Lisa sõit';
 $lang['sulge_soit']='Tühista';
 $lang['lisa_soit_nupp_hint']='Sõidu lisamiseks kliki siia';
 $lang['sulge_soit_hint']='Tühistamiseks kliki siia';
+$lang['toeta_meid']='TOETA MEID';
+$lang['kontakt']='KONTAKT';
+$lang['kontaktid']='Kontaktid';
 ?>

@@ -98,7 +98,7 @@ $default = ($_GET['lang']=='') ? 'en' : $_GET['lang'];*/
 
         <div class="inner">
 
-            <a class="veebihead">Kontaktid</a>
+            <a class="veebihead"><?php echo $this->lang->line('kontaktid'); ?></a>
             <div class="kaartiitem" id="kontakts">
 
             </div>

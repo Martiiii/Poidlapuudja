@@ -68,7 +68,7 @@ $default = ($_GET['lang']=='') ? 'en' : $_GET['lang'];*/
                 </div>
                 <ul class="nav navbar-nav">
                     <div id="hintbox"></div>
-                    <li><a href="pealeht">AVALEHT</a></li>
+                    <li><a href="pealeht"><?php echo $this->lang->line('pealeht'); ?></a></li>
 
                 </ul>
 
@@ -89,7 +89,7 @@ $default = ($_GET['lang']=='') ? 'en' : $_GET['lang'];*/
 
         <div class="inner">
 
-            <a class="veebihead">Kontaktid</a>
+            <a class="veebihead"><?php echo $this->lang->line('kontaktid'); ?></a>
             <div class="kaartiitem" id="kontakts">
 
             </div>

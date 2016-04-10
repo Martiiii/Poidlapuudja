@@ -52,4 +52,7 @@ $lang['lisa_soit_nupp']='Create a trip';
 $lang['sulge_soit']='Cancel';
 $lang['lisa_soit_nupp_hint']='Click to create a new trip';
 $lang['sulge_soit_hint']='Click to cancel';
+$lang['toeta_meid']='SUPPORT US';
+$lang['kontakt']='CONTACT';
+$lang['kontaktid']='Contacts';
 ?>
