@@ -154,42 +154,42 @@
                         <div class="col-lg-8 col-xs-12">
 
                             <div class="form-group">
-                                <label class="col-lg-4 control-label"><?php echo $this->lang->line('Kasutajanimi');?></label>
+                                <label class="col-lg-4 control-label"><?php echo $this->lang->line('Kasutajanimi');?>*</label>
                                 <div class="col-lg-8">
                                     <input title="kasutajanimi" type="text" class="form-control" name="kasutajanimi" id="kasutajanimi" placeholder="<?php echo $this->lang->line('Kasutajanimi1');?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-lg-4 control-label"><?php echo $this->lang->line('Eesnimi');?></label>
+                                <label class="col-lg-4 control-label"><?php echo $this->lang->line('Eesnimi');?>*</label>
                                 <div class="col-lg-8">
                                     <input title="eesnimi" type="text" class="form-control" name="eesnimi" id="eesnimi" placeholder="<?php echo $this->lang->line('Eesnimi1');?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-lg-4 control-label"><?php echo $this->lang->line('Perenimi');?></label>
+                                <label class="col-lg-4 control-label"><?php echo $this->lang->line('Perenimi');?>*</label>
                                 <div class="col-lg-8">
                                     <input title="perenimi" type="text" class="form-control" name="perenimi" id="perenimi" placeholder="<?php echo $this->lang->line('Perenimi1');?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label  class="col-lg-4 control-label"><?php echo $this->lang->line('Parool');?></label>
+                                <label  class="col-lg-4 control-label"><?php echo $this->lang->line('Parool');?>*</label>
                                 <div class="col-lg-8">
                                     <input title="parool" type="password" class="form-control" name="parool" id="parool" placeholder="<?php echo $this->lang->line('Parool1');?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-lg-4 control-label"><?php echo $this->lang->line('Email');?></label>
+                                <label class="col-lg-4 control-label"><?php echo $this->lang->line('Email');?>*</label>
                                 <div class="col-lg-8">
                                     <input title="email" type="text" class="form-control" name="email" id="email" placeholder="<?php echo $this->lang->line('Email1');?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label  class="col-lg-4 control-label"><?php echo $this->lang->line('Telefon'); ?></label>
+                                <label  class="col-lg-4 control-label"><?php echo $this->lang->line('Telefon'); ?>*</label>
                                 <div class="col-lg-8">
                                     <input title="telnr" type="text" class="form-control" name="telnr" id="telnr" placeholder="00000000">
                                 </div>

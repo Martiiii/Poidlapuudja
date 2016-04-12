@@ -267,10 +267,10 @@ class Index extends CI_Controller
 
         $this->form_validation->set_rules('eesnimi', 'Eesnimi', 'trim|required|alpha|min_length[3]|max_length[30]');
         $this->form_validation->set_rules('perenimi', 'Perenimi', 'trim|required|alpha|min_length[3]|max_length[30]');
-        $this->form_validation->set_rules('email', 'Email', 'trim|valid_email');
+        $this->form_validation->set_rules('email', 'Email', 'trim|valid_email|required');
         $this->form_validation->set_rules('parool', 'Parool', 'trim|required|min_length[8]|max_length[30]|md5');
         $this->form_validation->set_rules('kasutajanimi', 'Kasutajanimi', 'trim|required|alpha_numeric|min_length[5]|max_length[30]|is_unique[kuvakasutajad.kasutajanimi]');
-        $this->form_validation->set_rules('telnr', 'Telefoninumber', 'trim|numeric');
+        $this->form_validation->set_rules('telnr', 'Telefoninumber', 'trim|numeric|required');
 
         if ($this->form_validation->run() == FALSE)
         {

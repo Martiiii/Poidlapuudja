@@ -146,31 +146,31 @@ vfzS9ww5+28tKRzz2hgaGWEtTEB6rN0Rkvuz40HALNKvepnn6DYqvu4Udir040oE
     ?>
 
 
-    <form method="post" action="http://localhost:8080/banklink/ipizza"></form>
-    <!-- include all values as hidden form fields -->
-    <?php foreach ($fields as $key => $val): ?>
-        <input type="hidden" name="<?php echo $key; ?>" value="<?php echo htmlspecialchars($val); ?>"/>
-    <?php endforeach; ?>
+    <form method="post" action="http://localhost:8080/banklink/ipizza">
+        <!-- include all values as hidden form fields -->
+        <?php foreach ($fields as $key => $val): ?>
+            <input type="hidden" name="<?php echo $key; ?>" value="<?php echo htmlspecialchars($val); ?>"/>
+        <?php endforeach; ?>
 
-    <h1>Toetamine</h1>
-    <!-- draw table output for demo -->
+        <h1>Toetamine</h1>
+        <!-- draw table output for demo -->
 
-    <div class="row">
+        <div class="row">
 
-        Siin saate meie projekti toetada, et saaksime luua Teile parema rakenduse. asd
-
-
-    </div>
-    <div class="row">
+            Siin saate meie projekti toetada, et saaksime luua Teile parema rakenduse. asd
 
 
-        <input type="submit" id="toetameid" class="toetanupp" value="TOETA"/>
+        </div>
+        <div class="row">
 
-    </div>
+
+            <input type="submit" id="toetameid" class="toetanupp" value="TOETA"/>
+
+        </div>
+    </form>
 
 
 </div>
-
 
 
 </body>
