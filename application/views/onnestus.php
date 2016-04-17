@@ -78,7 +78,8 @@
     ?>
     <h3> <?php echo $fields["VK_SERVICE"] == "1111" ? "Makse sooritatud." : "Makse ebaõnnestus." ?></h3>
 
-    Teid suunatakse tagasi avalehele.
+
+    Teid suunatakse peatselt tagasi avalehele.
     <?php header("refresh:3;url=index_out" ); ?>
 
 </div>
