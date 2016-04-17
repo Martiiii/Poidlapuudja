@@ -43,11 +43,7 @@
 
 
     <?php
-    function aeg()
-    {
-        $aeg = new DateTime('now', new DateTimeZone('Europe/Helsinki'));
-        return $aeg->format('Y-m-d\TH:i:s\+0200');
-    }
+
 
 
     // THIS IS AUTO GENERATED SCRIPT
@@ -57,31 +53,31 @@
     // Check that your editor is set to use UTF-8 before using any non-ascii characters
     $private_key = openssl_pkey_get_private(
         "-----BEGIN RSA PRIVATE KEY-----
-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
+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
 -----END RSA PRIVATE KEY-----");
 
 
@@ -94,7 +90,7 @@ vfzS9ww5+28tKRzz2hgaGWEtTEB6rN0Rkvuz40HALNKvepnn6DYqvu4Udir040oE
     $fields = array(
         "VK_SERVICE" => "1011",
         "VK_VERSION" => "008",
-        "VK_SND_ID" => "uid100065",
+        "VK_SND_ID" => "uid100094",
         "VK_STAMP" => "12345",
         "VK_AMOUNT" => "50",
         "VK_CURR" => "EUR",
@@ -105,7 +101,7 @@ vfzS9ww5+28tKRzz2hgaGWEtTEB6rN0Rkvuz40HALNKvepnn6DYqvu4Udir040oE
         "VK_MSG" => "Annetus",
         "VK_RETURN" => 'http://www.poial.cs.ut.ee/onnestus',
         "VK_CANCEL" => 'http://www.poial.cs.ut.ee/ebaonnestus',
-        "VK_DATETIME" => aeg(),
+        "VK_DATETIME" => "2016-04-17T19:11:31+0300",
         "VK_ENCODING" => "utf-8",
     );
     // http://localhost:8080/project/EZX5U64dyWRkvQDf?payment_action=success
@@ -157,7 +153,7 @@ vfzS9ww5+28tKRzz2hgaGWEtTEB6rN0Rkvuz40HALNKvepnn6DYqvu4Udir040oE
 
         <div class="row">
 
-            Siin saate meie projekti toetada, et saaksime luua Teile parema rakenduse. asd
+            Siin saate meie projekti toetada, et saaksime luua Teile parema rakenduse.
 
 
         </div>
