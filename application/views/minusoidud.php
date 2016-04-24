@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="et" manifest="/manifest.appcache">
 <head>
     <meta charset="UTF-8">
