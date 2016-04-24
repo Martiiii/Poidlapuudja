@@ -21,7 +21,6 @@ a:hover {
 
 
 
-
 /*
  * Base structure
  */
@@ -30,7 +29,7 @@ html,
 body {
     height: 100%;
     background-color: #33332c;
-    background: url("http://files.vividscreen.info/soft/609cfdb872f32faa31e69a09f21e0731/Retro-Car-on-Highway-1920x1200.jpg") no-repeat center center fixed;
+    background: #c19e71;
     background-size: cover;
 }
 body {
@@ -38,6 +37,7 @@ body {
     text-align: center;
     text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
+
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
@@ -62,7 +62,41 @@ body {
 
 /* Padding for spacing */
 .inner {
-    padding: 30px;
+    min-height: 600px;
+    max-height: 600px;
+    background-image: url("http://files.vividscreen.info/soft/609cfdb872f32faa31e69a09f21e0731/Retro-Car-on-Highway-1920x1200.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-width: 100%;
+}
+
+.veebihead {
+    text-decoration: underline;
+    font-size: 250%;
+}
+
+.caro {
+    max-height: 650px;
+    padding-bottom: 250px;
+
+}
+.map {
+    color: #33332c;
+    text-align:justify;
+}
+
+#hintbox {
+    display: none;
+    position: absolute;
+    font-size: 12px;
+    background-color: #d5f8f1;
+    color: #24060c;
+    border: 1px solid #24060c;
+    border-radius: 5px;
+    padding: 8px;
 }
 
 
@@ -74,11 +108,15 @@ body {
     margin-bottom: 10px;
     max-width: 100%;
 
-
-
-
-
 }
+
+.list-group > li > a {
+    letter-spacing: 2px;
+    line-height: 4;
+}
+
+
+
 
 .masthead-nav > li {
     display: inline-flex;
@@ -146,6 +184,25 @@ body {
 .cover .btn-lg {
     padding: 10px 20px;
     font-weight: bold;
+}
+
+.toetanupp {
+    color: #00ffe1;
+    background-color: #07fff8;
+}
+#toetameid {
+    color: #d43f3a;
+}
+
+.input[type="submit"] {
+    display: block;
+    background: #d43f3a;
+    color: #cc8c0b;
+    border: none;
+    padding: 10px 20px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
 }
 
 

@@ -49,12 +49,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['pealeht'] = 'index/pealeht';
-$route['kasutajad'] = 'index/kasutajad';
-$route['soidud'] = 'index/soidud';
-$route['minusoidud'] = 'index/minusoidud';
-//$route['(:any)'] = 'index/view/$1';
-$route['default_controller'] = 'index/pealeht';
+$route['ebaonnestus']='Index/ebaonnestus';
+$route['onnestus']='Index/onnestus';
+$route['receive']='Index/receive';
+$route['anneta'] = 'Index/anneta';
+$route['kontakt'] = 'Index/kontakt';
+$route['index_out'] = 'login/index';
+$route['pealeht'] = 'Index/pealeht';
+$route['kasutajad'] = 'Index/kasutajad';
+$route['soidud'] = 'Index/soidud';
+$route['minusoidud'] = 'Index/minusoidud';
+$route['kaart'] = 'Index/site_map';
+$route['kaart\.xml'] = "Index/sitemap";
+$route['default_controller'] = 'login';
+$route['Proovifail'] = "Index/Proovifail";
+$route['manifest.appcache'] = "Index/cache";
+//$route['(:any)'] = 'login/index';
+
 
 //$route['404_override'] = '';
 //$route['translate_uri_dashes'] = FALSE;
