@@ -5,6 +5,7 @@ class VerifyLogin extends CI_Controller {
     function __construct()
     {
         parent::__construct();
+        $this->load->library('password');
         $this->load->model('user','',TRUE);
         $this->session->set_userdata('language', 'estonian');
         $this->session->set_userdata('languageloc', 'est_lang.php');
@@ -53,11 +54,21 @@ class VerifyLogin extends CI_Controller {
         $query = $this->db->query($sql);
 
         if ($query->num_rows() > 0) {
-            $sess_array = array(
+            /*$sess_array = array(
                 'ID' => $id,
                 'username' => $username
             );
             $this->session->set_userdata('logged_in', $sess_array);
+            */
+            $sess_array = array();
+            foreach($query->result() as $row)
+            {
+                $sess_array = array(
+                    'ID' => $row->ID,
+                    'username' => $row->Kasutajanimi
+                );
+                $this->session->set_userdata('logged_in', $sess_array);
+            }
             redirect('index/pealeht', 'refresh');
 
         } else {

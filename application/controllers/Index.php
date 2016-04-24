@@ -13,6 +13,7 @@ class Index extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->library('password');
         $this->load->library('encrypt');
         $this->load->driver('session');
         $this->load->helper('cookie');
@@ -227,6 +228,8 @@ class Index extends CI_Controller
         {
             $session_data = $this->session->userdata('logged_in');
             $data['username'] = $session_data['username'];
+            $username = intval($this->session->userdata['logged_in']['ID']);
+
             if ($this->input->cookie('language')) {
                 $lang = $this->input->cookie('language');
                 if ($lang == 'estonian') {
@@ -242,7 +245,7 @@ class Index extends CI_Controller
             }
             $this->lang->load($languageloc, $language);
             $this->load->helper('url');
-            $sql = "SELECT * FROM kuvasoidud";
+            $sql = "SELECT * FROM kuvasoidud WHERE UserID = $username";
             $query = $this->db->query($sql);
             $data['uudistekogu'] = $query->result();
             $this->load->view('minusoidud', $data);
@@ -263,12 +266,13 @@ class Index extends CI_Controller
         $kasutajanimi = $_POST['kasutajanimi'];
         $email = $_POST['email'];
         $telefoninumber = $_POST['telnr'];
-        $parool = md5($_POST['parool']);
+        //$parool = md5($_POST['parool']);
+        $paroolsisse = $this->password->create_hash($_POST['parool']);
 
         $this->form_validation->set_rules('eesnimi', 'Eesnimi', 'trim|required|alpha|min_length[3]|max_length[30]');
         $this->form_validation->set_rules('perenimi', 'Perenimi', 'trim|required|alpha|min_length[3]|max_length[30]');
         $this->form_validation->set_rules('email', 'Email', 'trim|valid_email|required');
-        $this->form_validation->set_rules('parool', 'Parool', 'trim|required|min_length[8]|max_length[30]|md5');
+        $this->form_validation->set_rules('parool', 'Parool', 'trim|required|min_length[8]|max_length[30]');
         $this->form_validation->set_rules('kasutajanimi', 'Kasutajanimi', 'trim|required|alpha_numeric|min_length[5]|max_length[30]|is_unique[kuvakasutajad.kasutajanimi]');
         $this->form_validation->set_rules('telnr', 'Telefoninumber', 'trim|numeric|required');
 
@@ -282,7 +286,7 @@ class Index extends CI_Controller
         else
         {
             // insert form data into database
-            if ($this->db->query("CALL lisakasutaja('$kasutajanimi', '$eesnimi', '$perenimi', '$email', '$parool', '$telefoninumber')"))
+            if ($this->db->query("CALL lisakasutaja('$kasutajanimi', '$eesnimi', '$perenimi', '$email', '$paroolsisse', '$telefoninumber')"))
             {
                 $this->session->set_flashdata('msg','<div class="alert alert-success text-center">Registreerimine õnnestus!</div>');
                 redirect('login', 'refresh');
@@ -291,7 +295,7 @@ class Index extends CI_Controller
             {
                 // error
                 $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Registreerimine ebaõnnestus!</div>');
-                redirect('login', 'refresh');
+                //redirect('login', 'refresh');
             }
         }
 
@@ -333,6 +337,26 @@ class Index extends CI_Controller
         $data['urlid'] = $query->result();
         header("Content-Type: text/xml;charset=iso-8859-1");
         $this->load->view('kaart', $data);
+
+    }
+
+    public function kustutasoit() {
+        //$lahtekoht = $this->input->post('lahtekoht');
+        //$kelts = $_POST['lahtekoht'];
+        //$this->session->set_flashdata('msg','<div class="alert alert-success text-center">Olen siin</div>');
+        //$this->load->view('kontakt');
+        //file_put_contents("fail.txt", $_POST['lahtekoht']);
+        //file_put_contents("fail.txt", $_POST['sihtkoht']);
+        //file_put_contents("fail.txt", $_POST['autojuht']);
+        $this->load->database();
+        $sihtkoht = $_POST['sihtkoht'];
+        $lahtekoht = $_POST['lahtekoht'];
+        $lisainfo = $_POST['lisainfo'];
+        $autojuht = $_POST['autojuht'];
+        $aeg = $_POST['aeg'];
+        $this->db->query("CALL kustutasoit('$sihtkoht', '$lahtekoht', '$lisainfo')");
+
+
 
     }
 

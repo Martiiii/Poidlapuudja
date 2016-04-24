@@ -38,6 +38,7 @@
     <script src="js/demo.js"></script>
     <script src="js/interactiveinfo.js"></script>
     <script src="js/SoitudeTabel.js"></script>
+
  
 </head>
  
@@ -147,7 +148,7 @@
     <div class="row">
         <div class="inner">
             <div class="table-responsive" id="soidudTable">
-                <table class="table">
+                <table class="table" id="tabel">
                     <thead>
                     <tr>
                         <th class="text-center"><?php echo $this->lang->line('Lähtekoht')?></th>
@@ -173,6 +174,45 @@
             </div>
         </div>
     </div>
+
+    <div id="minesoitu" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <form id="soituminemine" class = "form-horizontal" action="http://poial.cs.ut.ee/index/minesoitu" method="post" accept-charset="utf-8">
+                <div class="modal-content">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><?php echo $this->lang->line('Logi_sisse'); ?></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-8 col-xs-12">
+                            <div class="form-group">
+                                <label for="username" class="col-lg-2 control-label"><?php echo $this->lang->line('Kasutajanimi');?></label>
+                                <div class="col-lg-10">
+                                    <input title="kasutajanimi" type="text" class="form-control" name="kasutajanimi" id="username" placeholder="<?php echo $this->lang->line('Kasutajanimi1');?>">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" class="col-lg-2 control-label"><?php echo $this->lang->line('Parool');?></label>
+                                <div class="col-lg-10">
+                                    <input title="parool" type="password" class="form-control" name="parool" id="password" placeholder="<?php echo $this->lang->line('Parool1');?>">
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button id = "logimisnupp" type = "submit" value="Login" class = "btn btn-primary"><?php echo $this->lang->line('Logi'); ?></button>
+                                <button id = "closenupplog" type = "button" class = "btn btn-default" data-dismiss="modal"><?php echo $this->lang->line('Sulge'); ?></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
 
  
 </div>

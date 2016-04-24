@@ -69,7 +69,6 @@
                 <div class="navbar-collapse collapse">
 
                     <ul class="nav navbar-nav">
-                        <div id="hintbox"></div>
                         <li><a href="anneta"><?php echo $this->lang->line('toeta_meid'); ?></a></li>
                     </ul>
                 </div>
@@ -224,14 +223,14 @@
                             <div class="form-group">
                                 <label for="username" class="col-lg-2 control-label"><?php echo $this->lang->line('Kasutajanimi');?></label>
                                 <div class="col-lg-10">
-                                    <input title="kasutajanimi" type="text" class="form-control" name="kasutajanimi" id="username" placeholder=<?php echo $this->lang->line('Kasutajanimi1');?>>
+                                    <input title="kasutajanimi" type="text" class="form-control" name="kasutajanimi" id="username" placeholder="<?php echo $this->lang->line('Kasutajanimi1');?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="password" class="col-lg-2 control-label"><?php echo $this->lang->line('Parool');?></label>
                                 <div class="col-lg-10">
-                                    <input title="parool" type="password" class="form-control" name="parool" id="password" placeholder=<?php echo $this->lang->line('Parool1');?>>
+                                    <input title="parool" type="password" class="form-control" name="parool" id="password" placeholder="<?php echo $this->lang->line('Parool1');?>">
                                 </div>
                             </div>
 

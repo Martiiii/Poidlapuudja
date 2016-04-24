@@ -44,7 +44,7 @@
 
     // STEP 1. Setup bank certificate
     // ==============================
-    $public_key = openssl_pkey_get_public(' ');
+
     // STEP 2. Define payment information
     // ==================================
     $fields = array ();
@@ -69,7 +69,7 @@
         str_pad (mb_strlen($fields["VK_SND_NAME"], "UTF-8"),  3, "0", STR_PAD_LEFT) . $fields["VK_SND_NAME"] .   /* Tõõger Leõpäöld */
         str_pad (mb_strlen($fields["VK_REF"], "UTF-8"),       3, "0", STR_PAD_LEFT) . $fields["VK_REF"] .        /* 1234561 */
         str_pad (mb_strlen($fields["VK_MSG"], "UTF-8"),       3, "0", STR_PAD_LEFT) . $fields["VK_MSG"] .        /* Torso Tiger */
-        str_pad (mb_strlen($fields["VK_T_DATETIME"], "UTF-8"), 3, "0", STR_PAD_LEFT) . $fields["VK_T_DATETIME"];  /* 2016-03-26T17:32:31+0200 */
+        str_pad (mb_strlen($fields["VK_T_DATETIME"], "UTF-8"), 3, "0", STR_PAD_LEFT) . $fields["VK_T_DATETIME"];  /* 2016-04-07T20:07:18+0300 */
     // STEP 4. Verify the data with RSA-SHA1
     // =====================================
 

@@ -9,7 +9,7 @@
 	<meta name="author" content="">
 	<link rel="icon" href="../../favicon.ico">
 	<base href="<?php echo base_url()?>">
-	<title>Pöidlapüüdja - Kasutajad</title>
+	<title>Pöidlapüüdja - Toetamine</title>
 	<!-- Bootstrap core CSS -->
 
 	<link href="css/bootstrap.css" rel="stylesheet">

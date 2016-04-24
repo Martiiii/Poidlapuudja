@@ -115,17 +115,17 @@
                        <?
                        $i = 0;
                        foreach($kasutajad as $kasutaja):
-                           if(++$i == 11) break;
+                           if(++$i == 3) break;
                            ?>
-		     <tr>
-			<td><? echo $kasutaja->Eesnimi ?></td>
-                        <td><? echo $kasutaja->Perenimi ?></td>
-                        <td><? echo $kasutaja->Liitumine ?></td>
-			<td><? echo $kasutaja->Telefoninumber ?></td>
-		       </tr>
-	              <?endforeach ?>
+		                <tr>
+                            <td><? echo $kasutaja->Eesnimi ?></td>
+                            <td><? echo $kasutaja->Perenimi ?></td>
+                            <td><? echo $kasutaja->Liitumine ?></td>
+                            <td><? echo $kasutaja->Telefoninumber ?></td>
+		                </tr>
+	                    <?endforeach ?>
 
-               </tbody>
+                </tbody>
 
                 </table>
             </div>

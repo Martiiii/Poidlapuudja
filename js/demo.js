@@ -62,7 +62,6 @@ $(document).ready(function () {
             type: "POST",
             url: "index/change_lang_toEst/",
             success: function (messageforyou) {
-
                 window.location.href = "login/index2";
 
             }
@@ -80,10 +79,10 @@ $(document).ready(function () {
             url: "index/lisauudis/",
             data: $("#regamine :input").serializeArray(),
             success: function (messageforyou) {
-                window.location.href = "index/pealeht";
+                window.location.reload();
             },
             error: function (messageforyou2) {
-                window.location.href = "index/pealeht";
+                window.location.reload();
             }
         });
 
@@ -99,7 +98,7 @@ $(document).ready(function () {
     });
 
     $('#lisasoitnupp').click(function () {
-
+        console.log($("#lisamine :input").serializeArray() + " JEJEJEJ");
         $.ajax({
 
             type: "POST",

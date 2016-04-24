@@ -62,3 +62,24 @@
 [08-Apr-2016 18:12:09 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '}' in /webpages/poialcsut/public_html/application/controllers/Index.php on line 30
 [08-Apr-2016 18:47:07 Europe/Tallinn] PHP Parse error:  syntax error, unexpected end of file in /webpages/poialcsut/public_html/application/controllers/Index.php on line 223
 [10-Apr-2016 16:16:11 Europe/Tallinn] PHP Fatal error:  Call to undefined function base_url() in /webpages/poialcsut/public_html/offline.php on line 10
+[23-Apr-2016 13:07:29 Europe/Tallinn] PHP Fatal error:  Call to a member function create_hash() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 267
+[23-Apr-2016 13:08:34 Europe/Tallinn] PHP Fatal error:  Call to a member function create_hash() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 267
+[23-Apr-2016 13:09:59 Europe/Tallinn] PHP Fatal error:  Call to a member function create_hash() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 267
+[23-Apr-2016 13:26:42 Europe/Tallinn] PHP Fatal error:  Call to a member function create_hash() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 267
+[23-Apr-2016 15:23:57 Europe/Tallinn] PHP Fatal error:  Call to a member function create_hash() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 267
+[23-Apr-2016 15:26:32 Europe/Tallinn] PHP Fatal error:  Call to a member function create_hash() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 267
+[23-Apr-2016 15:27:56 Europe/Tallinn] PHP Fatal error:  Call to a member function create_hash() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 267
+[23-Apr-2016 15:28:46 Europe/Tallinn] PHP Fatal error:  Call to a member function create_hash() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 267
+[23-Apr-2016 15:29:22 Europe/Tallinn] PHP Fatal error:  Call to a member function create_hash() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 267
+[23-Apr-2016 15:30:00 Europe/Tallinn] PHP Fatal error:  Call to a member function create_hash() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 267
+[23-Apr-2016 15:31:55 Europe/Tallinn] PHP Fatal error:  Cannot use object of type stdClass as array in /webpages/poialcsut/public_html/application/models/User.php on line 18
+[24-Apr-2016 21:19:59 Europe/Tallinn] PHP Fatal error:  Call to a member function query() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 357
+[24-Apr-2016 21:20:08 Europe/Tallinn] PHP Fatal error:  Call to a member function query() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 357
+[24-Apr-2016 21:20:14 Europe/Tallinn] PHP Fatal error:  Call to a member function query() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 357
+[24-Apr-2016 21:20:25 Europe/Tallinn] PHP Fatal error:  Call to a member function query() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 357
+[24-Apr-2016 21:20:30 Europe/Tallinn] PHP Fatal error:  Call to a member function query() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 357
+[24-Apr-2016 21:20:30 Europe/Tallinn] PHP Fatal error:  Call to a member function query() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 357
+[24-Apr-2016 21:20:32 Europe/Tallinn] PHP Fatal error:  Call to a member function query() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 357
+[24-Apr-2016 21:21:21 Europe/Tallinn] PHP Fatal error:  Call to a member function query() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 357
+[24-Apr-2016 21:21:23 Europe/Tallinn] PHP Fatal error:  Call to a member function query() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 357
+[24-Apr-2016 21:21:27 Europe/Tallinn] PHP Fatal error:  Call to a member function query() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 357

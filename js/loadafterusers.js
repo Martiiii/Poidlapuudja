@@ -1,8 +1,9 @@
 
-var miturida = 20;
+var miturida = 4;
+var amount = 5; // Load step
+var pageNr = 2; // Shown in the URL, Initially added on "load_more_button" click
 
 function users() {
-    console.log("siinasdasd");
     $.ajax({
         type: 'POST',
         url: "index/Proovifail",
@@ -10,18 +11,35 @@ function users() {
         data: "postuser=1",
 
         success: function (result) {
-            console.log(JSON.stringify(result[0]))
             writeRows(result);
-
         }
     });
 
 }
 
+syncRacesToURL();
+
+function syncRacesToURL(){
+    var currentURL = window.location.href;
+    if(currentURL.indexOf('page_nr')> -1){
+        console.log(currentURL.indexOf('page_nr'));
+        var currentPage = parseInt(currentURL.split("#")[1].split('=')[1]);
+
+        pageNr = currentPage; // For history.pushState
+        miturida = (currentPage) * 2; // For page 3, We need additional 10 Items (not 15)
+
+        users();
+
+    }
+
+}
+
 function writeRows(data) {
+    history.pushState({}, "page nr", "kasutajad#page_nr=" + (pageNr));
+    pageNr = pageNr + 1;
+    console.log(miturida);
+
     var uusmuutuja = "";
-	console.log("SIIN");
-    console.log(document.location.hash);
     if(miturida < data.length) {
         for (var i = 0; i < miturida; i++) {
             var h = "<tr>" +
@@ -33,7 +51,7 @@ function writeRows(data) {
             uusmuutuja = uusmuutuja + h;
 
         }
-        miturida += 10;
+        miturida += 2;
 
 
     document.getElementById("usertable").innerHTML = uusmuutuja;
