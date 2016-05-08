@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="et" manifest="/manifest.appcache">
+<html lang="et">
 <head>
 <meta charset="UTF-8">
 
@@ -12,7 +12,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <base href="<?php echo base_url()?>">
-    <title>Pöidlapüüdja - Sõidud</title>
+    <title><?php echo $this->lang->line('soidud_title') ?></title>
  
     <!-- Bootstrap core CSS -->
     
@@ -26,18 +26,11 @@
     <link href="css/cover.css" rel="stylesheet">
  
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
+    <!--[if lt IE 9]<script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- <script src="js/ie-emulation-modes-warning.js"></script> -->
 
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js">\x3C/script>')</script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js">\x3C/script>')</script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js">\x3C/script>')</script>
-    <script src="js/demo.js"></script>
-    <script src="js/interactiveinfo.js"></script>
-    <script src="js/SoitudeTabel.js"></script>
+
+
 
  
 </head>
@@ -46,8 +39,12 @@
 
 
 <div class="container-fluid">
- 
- 
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <?php echo $this->session->flashdata('msg'); ?>
+        </div>
+    </div>
     <div class="row">
  
         <div class="col-lg-8  col-sm-8 ">
@@ -73,6 +70,7 @@
                         <li><a href="soidud"><?php echo $this->lang->line('Soidud') ?> </a></li>
                         <li><a href="kasutajad"><?php echo $this->lang->line('Kasutajad') ?> </a></li>
                         <li><a href="minusoidud"><?php echo $this->lang->line('Minusoidud') ?> </a></li>
+                        <li><a href="liitutudsoidud"><?php echo $this->lang->line('liitutud_soidud') ?> </a></li>
                     </ul>
  
                 </div>
@@ -96,6 +94,8 @@
         </div>
  
     </div>
+    <p> <?php echo $this->lang->line('vajuta_liituda') ?> </p>
+
     <div id="modallisa" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <form id="lisamine" class = "form-horizontal" action="http://poial.cs.ut.ee/index/lisasoit" method="post" accept-charset="utf-8" >
@@ -108,7 +108,6 @@
                         <div class="col-lg-8 col-xs-12">
 
                             <div class="form-group">
-
                                 <label class="col-lg-4 control-label"><?php echo $this->lang->line('lahtekoht'); ?></label>
                                 <div class="col-lg-8">
                                     <input title="<?php echo $this->lang->line('lahtekoht'); ?>" type="text" class="form-control" name="lahtekoht" id="lahtekoht" placeholder="<?php echo $this->lang->line('lahtekoht'); ?>" >
@@ -174,55 +173,24 @@
             </div>
         </div>
     </div>
-
-    <div id="minesoitu" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <form id="soituminemine" class = "form-horizontal" action="http://poial.cs.ut.ee/index/minesoitu" method="post" accept-charset="utf-8">
-                <div class="modal-content">
-                    <button class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"><?php echo $this->lang->line('Logi_sisse'); ?></h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-8 col-xs-12">
-                            <div class="form-group">
-                                <label for="username" class="col-lg-2 control-label"><?php echo $this->lang->line('Kasutajanimi');?></label>
-                                <div class="col-lg-10">
-                                    <input title="kasutajanimi" type="text" class="form-control" name="kasutajanimi" id="username" placeholder="<?php echo $this->lang->line('Kasutajanimi1');?>">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password" class="col-lg-2 control-label"><?php echo $this->lang->line('Parool');?></label>
-                                <div class="col-lg-10">
-                                    <input title="parool" type="password" class="form-control" name="parool" id="password" placeholder="<?php echo $this->lang->line('Parool1');?>">
-                                </div>
-                            </div>
-
-                            <div class="modal-footer">
-                                <button id = "logimisnupp" type = "submit" value="Login" class = "btn btn-primary"><?php echo $this->lang->line('Logi'); ?></button>
-                                <button id = "closenupplog" type = "button" class = "btn btn-default" data-dismiss="modal"><?php echo $this->lang->line('Sulge'); ?></button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </form>
-        </div>
-    </div>
-
-
-
- 
 </div>
  
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js">\x3C/script>')</script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js">\x3C/script>')</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js">\x3C/script>')</script>
+<script src="js/demo.js"></script>
+<script src="js/interactiveinfo.js"></script>
+<script src="js/SoitudeTabel.js"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script src="js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="js/ie10-viewport-bug-workaround.js"></script>
+<script src="js/liitu.js"></script>
 </body>
 </html>

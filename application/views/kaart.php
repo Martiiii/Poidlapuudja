@@ -25,4 +25,10 @@
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
+    <url>
+        <loc>http://poial.cs.ut.ee/liitutudsoidud</loc>
+        <lastmod>2016-03-06</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
 </urlset>

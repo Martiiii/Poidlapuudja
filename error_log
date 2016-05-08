@@ -83,3 +83,6 @@
 [24-Apr-2016 21:21:21 Europe/Tallinn] PHP Fatal error:  Call to a member function query() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 357
 [24-Apr-2016 21:21:23 Europe/Tallinn] PHP Fatal error:  Call to a member function query() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 357
 [24-Apr-2016 21:21:27 Europe/Tallinn] PHP Fatal error:  Call to a member function query() on null in /webpages/poialcsut/public_html/application/controllers/Index.php on line 357
+[29-Apr-2016 14:11:14 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /webpages/poialcsut/public_html/application/controllers/Index.php on line 369
+[29-Apr-2016 14:40:44 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '$reisijadresult' (T_VARIABLE) in /webpages/poialcsut/public_html/application/controllers/Index.php on line 369
+[29-Apr-2016 15:22:14 Europe/Tallinn] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /webpages/poialcsut/public_html/application/controllers/Index.php on line 375

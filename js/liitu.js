@@ -1,5 +1,5 @@
 var table = document.getElementById("tabel");
-var tbody = table.getElementsByTagName("button")[0];
+var tbody = table.getElementsByTagName("tbody")[0];
 
 tbody.onclick = function (e) {
     e = e || window.event;
@@ -14,7 +14,7 @@ tbody.onclick = function (e) {
             data.push(cells[i].innerHTML);
         }
     }
-    //alert(data[4]);
+    //alert("Liitusid sõiduga");
 
     var testdata = {lahtekoht: data[0], sihtkoht: data[1], autojuht: data[2], lisainfo: data[3], aeg: data[4] };
 
@@ -22,13 +22,13 @@ tbody.onclick = function (e) {
 
     $.ajax({
         type: 'POST',
-        url: "index/kustutasoit/",
+        url: "index/liitusoiduga/",
         data: testdata,
         success: function(message) {
             window.location.reload();
         },
         error: function(msg) {
-            console.log("FAIL");
+            window.location.reload();
         }
     });
 };

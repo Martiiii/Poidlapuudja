@@ -58,6 +58,7 @@ $route['index_out'] = 'login/index';
 $route['pealeht'] = 'Index/pealeht';
 $route['kasutajad'] = 'Index/kasutajad';
 $route['soidud'] = 'Index/soidud';
+$route['liitutudsoidud'] = 'Index/liitutudsoidud';
 $route['minusoidud'] = 'Index/minusoidud';
 $route['kaart'] = 'Index/site_map';
 $route['kaart\.xml'] = "Index/sitemap";

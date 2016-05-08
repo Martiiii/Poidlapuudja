@@ -55,4 +55,22 @@ $lang['sulge_soit_hint']='Click to cancel';
 $lang['toeta_meid']='SUPPORT US';
 $lang['kontakt']='CONTACT';
 $lang['kontaktid']='Contacts';
+$lang['liitutud_soidud']="JOINED TRIPS";
+$lang['laadi_veel'] ="Load more";
+$lang['liitusid_soit']="You joined with a trip";
+$lang['liitusid_ebaonnestus']="Joining with a trip failed";
+$lang['liitusid_jubaliitunud']="You are already joined with that trip";
+$lang['lahkusid_soit'] = "Trip canceled";
+$lang['lahkusid_ebaonnestus']="Canceling a trip failed";
+$lang['pealeht_title']="Pöidlapüüdja - Home";
+$lang['soidud_title']="Pöidlapüüdja - Trips";
+$lang['kasutajad_title']="Pöidlapüüdja - Users";
+$lang['minusoidud_title']="Pöidlapüüdja - My trips";
+$lang['liitutud_title']="Pöidlapüüdja - Joined trips";
+$lang['kontakt_title']="Pöidlapüüdja -Contacts";
+$lang['vajuta_liituda']="Click on the row to join with a trip";
+$lang['vajuta_katkestada']="Click on the row to cancel a trip";
+$lang['lisamine_onnestus']="Successfully created a trip";
+$lang['lisamine_ebaonnestus']="Trip not created, fill all tabs";
 ?>
+

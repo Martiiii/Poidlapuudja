@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://poial.cs.ut.ee/" />
+<title>Registreerimine</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Registreerimine</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=kasutajanimi</td>
+	<td>Testkasutaja</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=eesnimi</td>
+	<td>Test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=perenimi</td>
+	<td>Kasutaja</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=parool</td>
+	<td>testkasutaja</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=email</td>
+	<td>testkasutaja@hot.ee</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=telnr</td>
+	<td>55123123</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=regamisnupp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div/div/div/div</td>
+	<td>Registreerimine õnnestus!</td>
+</tr>
+</tbody></table>
+</body>
+</html>

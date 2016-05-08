@@ -187,6 +187,54 @@ class Index extends CI_Controller
 
     }
 
+    public function liitutudsoidud() {
+        $this->load->database();
+        if($this->session->userdata('logged_in'))
+        {
+            $session_data = $this->session->userdata('logged_in');
+            $data['username'] = $session_data['username'];
+            if ($this->input->cookie('language')) {
+                $lang = $this->input->cookie('language');
+                if ($lang == 'estonian') {
+                    $language = 'estonian';
+                    $languageloc = 'est_lang.php';
+                } else if ($lang == 'english') {
+                    $language = 'english';
+                    $languageloc = 'eng_lang.php';
+                }
+            } else {
+                $language = 'estonian';
+                $languageloc = 'est_lang.php';
+            }
+            $this->lang->load($languageloc, $language);
+            $this->load->helper('url');
+            $sql = "SELECT * FROM kuvareisijad" ; //vaade vaja teha veel
+            $query = $this->db->query($sql);
+            $userid = $this->session->userdata('logged_in')['ID'];
+            $returnarray = array();
+            if ($query->num_rows() > 0)
+            {
+                foreach ($query->result() as $row)
+                {
+                    $arr = unserialize($row->Reisijad);
+                    if (!is_array($arr)) $arr = array();
+                   foreach ($arr as $val) {
+                       if ($val == $userid) array_push($returnarray, $row);
+                   }
+
+                }
+            }
+            $data['liitutudsoidud'] = $returnarray;
+            $this->load->view('liitutudsoidud', $data);
+        }
+        else
+        {
+            //If no session, redirect to login page
+            redirect('login', 'refresh');
+        }
+
+    }
+
     public function kasutajad() {
         $this->load->database();
         if($this->session->userdata('logged_in'))
@@ -261,19 +309,19 @@ class Index extends CI_Controller
 
     public function lisauudis() {
         $this->load->database();
-        $eesnimi = $_POST['eesnimi'];
-        $perenimi = $_POST['perenimi'];
-        $kasutajanimi = $_POST['kasutajanimi'];
-        $email = $_POST['email'];
-        $telefoninumber = $_POST['telnr'];
+        $eesnimi = htmlspecialchars(strip_tags($_POST['eesnimi']));
+        $perenimi = htmlspecialchars(strip_tags($_POST['perenimi']));
+        $kasutajanimi = htmlspecialchars(strip_tags($_POST['kasutajanimi']));
+        $email = htmlspecialchars(strip_tags($_POST['email']));
+        $telefoninumber = htmlspecialchars(strip_tags($_POST['telnr']));
         //$parool = md5($_POST['parool']);
         $paroolsisse = $this->password->create_hash($_POST['parool']);
 
-        $this->form_validation->set_rules('eesnimi', 'Eesnimi', 'trim|required|alpha|min_length[3]|max_length[30]');
-        $this->form_validation->set_rules('perenimi', 'Perenimi', 'trim|required|alpha|min_length[3]|max_length[30]');
+        $this->form_validation->set_rules('eesnimi', 'Eesnimi', 'trim|required|min_length[3]|max_length[30]');
+        $this->form_validation->set_rules('perenimi', 'Perenimi', 'trim|required|min_length[3]|max_length[30]');
         $this->form_validation->set_rules('email', 'Email', 'trim|valid_email|required');
         $this->form_validation->set_rules('parool', 'Parool', 'trim|required|min_length[8]|max_length[30]');
-        $this->form_validation->set_rules('kasutajanimi', 'Kasutajanimi', 'trim|required|alpha_numeric|min_length[5]|max_length[30]|is_unique[kuvakasutajad.kasutajanimi]');
+        $this->form_validation->set_rules('kasutajanimi', 'Kasutajanimi', 'trim|required|min_length[5]|max_length[30]|is_unique[kuvakasutajad.kasutajanimi]');
         $this->form_validation->set_rules('telnr', 'Telefoninumber', 'trim|numeric|required');
 
         if ($this->form_validation->run() == FALSE)
@@ -304,28 +352,48 @@ class Index extends CI_Controller
     public function lisasoit()
     {
         $this->load->database();
-        $lahtekoht = $_POST['lahtekoht'];
-        $sihtkoht = $_POST['sihtkoht'];
-        $lisainfo = $_POST['lisainfo'];
+        $this->load->helper('url');
+        if ($this->input->cookie('language')) {
+            $lang = $this->input->cookie('language');
+            if ($lang == 'estonian') {
+                $language = 'estonian';
+                $languageloc = 'est_lang.php';
+            } else if ($lang == 'english') {
+                $language = 'english';
+                $languageloc = 'eng_lang.php';
+            }
+        } else {
+            $language = 'estonian';
+            $languageloc = 'est_lang.php';
+        }
+        $this->lang->load($languageloc, $language);
+        $lahtekoht = htmlspecialchars(strip_tags($_POST['lahtekoht']));
+        $sihtkoht = htmlspecialchars(strip_tags($_POST['sihtkoht']));
+        $lisainfo = htmlspecialchars(strip_tags($_POST['lisainfo']));
         $username = $this->session->userdata('logged_in')['username'];
         $sql = "SELECT id FROM kuvakasutajad WHERE kasutajanimi='$username'" ;
         $query = $this->db->query($sql);
         $autojuht = 0;
         //$autojuht = $query->result();
+
+        $this->form_validation->set_rules('lahtekoht', 'Lähtekoht', 'required');
+        $this->form_validation->set_rules('sihtkoht', 'Sihtkoht', 'required');
+        $this->form_validation->set_rules('lisainfo', 'Lisainfo', 'required');
+
         foreach ($query->result_array() as $row)
         {
             $autojuht = $row['ID'];
         }
 
-        if ($this->db->query("CALL lisasoit('$lahtekoht', '$sihtkoht', '$autojuht', '$lisainfo')"))
+        if ($this->form_validation->run() == TRUE && $this->db->query("CALL lisasoit('$lahtekoht', '$sihtkoht', '$autojuht', '$lisainfo')"))
         {
-            $this->session->set_flashdata('msg','<div class="alert alert-success text-center">Lisamine õnnestus!</div>');
-            redirect('soidud', 'refresh');
+            $this->session->set_flashdata('msg','<div class="alert alert-success text-center">'.$this->lang->line("lisamine_onnestus").'</div>');
+            //redirect('soidud', 'refresh');
         }
         else
         {
-            $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Lisamine ebaõnnestus!</div>');
-            redirect('soidud', 'refresh');
+            $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">'.$this->lang->line("lisamine_ebaonnestus").'</div>');
+            //redirect('soidud', 'refresh');
         }
 
     }
@@ -341,13 +409,7 @@ class Index extends CI_Controller
     }
 
     public function kustutasoit() {
-        //$lahtekoht = $this->input->post('lahtekoht');
-        //$kelts = $_POST['lahtekoht'];
-        //$this->session->set_flashdata('msg','<div class="alert alert-success text-center">Olen siin</div>');
-        //$this->load->view('kontakt');
-        //file_put_contents("fail.txt", $_POST['lahtekoht']);
-        //file_put_contents("fail.txt", $_POST['sihtkoht']);
-        //file_put_contents("fail.txt", $_POST['autojuht']);
+
         $this->load->database();
         $sihtkoht = $_POST['sihtkoht'];
         $lahtekoht = $_POST['lahtekoht'];
@@ -355,8 +417,101 @@ class Index extends CI_Controller
         $autojuht = $_POST['autojuht'];
         $aeg = $_POST['aeg'];
         $this->db->query("CALL kustutasoit('$sihtkoht', '$lahtekoht', '$lisainfo')");
+        header('refresh: 1');
+    }
 
+    public function liitusoiduga() {
+        $this->load->database();
+        $this->load->helper('url');
+        if ($this->input->cookie('language')) {
+            $lang = $this->input->cookie('language');
+            if ($lang == 'estonian') {
+                $language = 'estonian';
+                $languageloc = 'est_lang.php';
+            } else if ($lang == 'english') {
+                $language = 'english';
+                $languageloc = 'eng_lang.php';
+            }
+        } else {
+            $language = 'estonian';
+            $languageloc = 'est_lang.php';
+        }
+        $this->lang->load($languageloc, $language);
+        $sihtkoht = $_POST['sihtkoht'];
+        $lahtekoht = $_POST['lahtekoht'];
+        $lisainfo = $_POST['lisainfo'];
+        $notdupe = true;
+        $sql = "SELECT reisijad FROM kuvareisijad WHERE sihtkoht ='$sihtkoht' AND lahtekoht = '$lahtekoht' AND lisainfo = '$lisainfo'";
+        $reisijad = $this->db->query($sql);
+        //$reisijadarray = array();
+        $userid = $this->session->userdata('logged_in')['ID'];
+        if ($reisijad->num_rows() > 0) {
+            $row = $reisijad->row();
+            $reisijadresult = $row->Reisijad;
+            $reisijadarray = unserialize($reisijadresult);
+            if (!is_array($reisijadarray)) $reisijadarray = array();
+            foreach ($reisijadarray as $val) {
+                if ($val == $userid) $notdupe = false;
+            }
+        }
+        if ($notdupe) {
+            $reisijadarray[] = $userid;
+            //array_push($reisijadarray, $userid);
+            $reisijadsisse = serialize($reisijadarray);
+            if ($this->db->query("CALL liitusoiduga('$sihtkoht', '$lahtekoht', '$lisainfo', '$reisijadsisse')")) {
+                $this->session->set_flashdata('msg','<div class="alert alert-success text-center"> '.$this->lang->line("liitusid_soit").'</div>');
+                //redirect('soidud', 'refresh');
+            } else {
+                $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">'.$this->lang->line("liitusid_ebaonnestus").'</div>');
+                //redirect('soidud', 'refresh');
+            }
+        } else {
+            $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">'.$this->lang->line("liitusid_jubaliitunud").'</div>');
+            //redirect('soidud', 'refresh');
+        }
+    }
 
+    public function lahkusoidust() {
+        $this->load->database();
+        $this->load->helper('url');
+        if ($this->input->cookie('language')) {
+            $lang = $this->input->cookie('language');
+            if ($lang == 'estonian') {
+                $language = 'estonian';
+                $languageloc = 'est_lang.php';
+            } else if ($lang == 'english') {
+                $language = 'english';
+                $languageloc = 'eng_lang.php';
+            }
+        } else {
+            $language = 'estonian';
+            $languageloc = 'est_lang.php';
+        }
+        $this->lang->load($languageloc, $language);
+        $sihtkoht = $_POST['sihtkoht'];
+        $lahtekoht = $_POST['lahtekoht'];
+        $lisainfo = $_POST['lisainfo'];
+        $sql = "SELECT reisijad FROM kuvareisijad WHERE sihtkoht ='$sihtkoht' AND lahtekoht = '$lahtekoht' AND lisainfo = '$lisainfo'";
+        $reisijad = $this->db->query($sql);
+        $userid = $this->session->userdata('logged_in')['ID'];
+        $reisijadarray2 = array();
+        if ($reisijad->num_rows() > 0) {
+            $row = $reisijad->row();
+            $reisijadresult = $row->Reisijad;
+            $reisijadarray = unserialize($reisijadresult);
+
+            foreach ($reisijadarray as $val) {
+                if ($val != $userid) $reisijadarray2[] = $val;
+            }
+        }
+        $reisijadsisse = serialize($reisijadarray2);
+        if ($this->db->query("CALL liitusoiduga('$sihtkoht', '$lahtekoht', '$lisainfo', '$reisijadsisse')")) {
+            $this->session->set_flashdata('msg','<div class="alert alert-success text-center">'.$this->lang->line("lahkusid_soit").'</div>');
+            //redirect('soidud', 'refresh');
+        } else {
+            $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">'.$this->lang->line("lahkusid_ebaonnestus").'</div>');
+            //redirect('soidud', 'refresh');
+        }
 
     }
 

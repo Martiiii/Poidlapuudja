@@ -24,7 +24,7 @@ Class User extends CI_Model
 
         }
 
-        if (array_key_exists("parool",$array) && ($this->password->validate_password($password, $array['parool']) || $query -> num_rows() == 1))
+        if (array_key_exists("parool",$array) && ($this->password->validate_password($password, $array['parool'])))
         {
             return $query->result();
         }

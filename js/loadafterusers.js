@@ -1,7 +1,7 @@
 
 var miturida = 4;
-var amount = 5; // Load step
-var pageNr = 2; // Shown in the URL, Initially added on "load_more_button" click
+var amount = 5;
+var pageNr = 2;
 
 function users() {
     $.ajax({
@@ -17,19 +17,15 @@ function users() {
 
 }
 
-syncRacesToURL();
+sync();
 
-function syncRacesToURL(){
+function sync(){
     var currentURL = window.location.href;
     if(currentURL.indexOf('page_nr')> -1){
-        console.log(currentURL.indexOf('page_nr'));
         var currentPage = parseInt(currentURL.split("#")[1].split('=')[1]);
-
-        pageNr = currentPage; // For history.pushState
-        miturida = (currentPage) * 2; // For page 3, We need additional 10 Items (not 15)
-
+        pageNr = currentPage;
+        miturida = 2*(currentPage); // et kaks korda rohkem asju välja prindiks
         users();
-
     }
 
 }

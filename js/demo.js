@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    "use strict";
     $('#faktinupp').click(function () {
         if ($('#soitekokku').is(':hidden')) {
             $('#soitekokku').removeClass('hidden');
@@ -94,7 +95,7 @@ $(document).ready(function () {
 
 
     $("#regamine").submit(function () {
-        return false
+        return false;
     });
 
     $('#lisasoitnupp').click(function () {
@@ -106,7 +107,8 @@ $(document).ready(function () {
             url: "index/lisasoit/",
             data: $("#lisamine :input").serializeArray(),
             success: function (messageforyou) {
-                alert("Lisamine oli edukas!");
+                //alert("Lisamine oli edukas!");
+                window.location.reload();
             },
             error: function (messageforyou2) {
                 alert(data + "5");
