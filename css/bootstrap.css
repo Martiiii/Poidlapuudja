@@ -184,7 +184,7 @@ table {
   border-collapse: collapse;
 }
 td,
-td {
+td { cursor: pointer;
 
 }
 

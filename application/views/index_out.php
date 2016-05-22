@@ -90,11 +90,11 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <img src="resources/Taust.jpg" class="img-rounded" alt="RĆ¤nk bemm">
+                                <img src="resources/stock1.jpg" class="img-rounded" alt="1">
                             </div>
 
                             <div class="item">
-                                <img src="resources/velg.jpg" class="img-rounded" alt="RĆ¤nk velg">
+                                <img src="resources/stock2.jpg" class="img-rounded" alt="2">
                             </div>
 
                         </div>
